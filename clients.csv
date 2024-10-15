@@ -1,0 +1,81 @@
+﻿index,id,name,provider,auth_basic,league_ids,league_names,seasons,reset_data
+1,0,test,statsbomb,cGVsY2hzYUBvdXRsb29rLmNvbTo5dmR5VEx0ag==,,"[""Premier League"", ""1. Bundesliga"", ""Championship"", ""Eredivisie"", ""Jupiler Pro League"", ""La Liga"", ""League One"", ""Ligue 1"", ""Primeira Liga"",  ""Serie A""]","[2023,2024]",0
+2,1,Statsbomb Demo,statsbomb,cGVsY2hzYUBvdXRsb29rLmNvbTo5dmR5VEx0ag==,,"[""Premier League"", ""1. Bundesliga"", ""A-League"", ""J1 League""]","[2023,2024]",0
+3,2,Opta Demo,opta,,,[],,0
+4,3,AFL Demo,champion,,,"[""AFL"", ""AFLW"", ""VFL"", ""VFLW"", ""WAFL"", ""WAFLW"", ""SANFL"", ""SANFLW"", ""U18 Boys Championships"", ""U18 Girls Championships"", ""Coates League Boys"", ""Coates League Girls"", ""WAFL Colts"",  ""WAFL Reserves"", ""SANFL Reserves"", ""SANFL U18""]",[2024],0
+5,8,WSL,statsbomb,YWxleEB0cmFpdHNpbnNpZ2h0cy5jb206bFdCTjJ4SWU=,,"[""FAWSL (FA Women's Super League)""]","[2019,2020,2021]",0
+6,20,Newcastle United FC,statsbomb,dG9tLmNvZmZpZWxkQG51ZmMuY28udWs6ZWoxeWZiaFQ=,,"[""Premier League"", ""1. Bundesliga"", ""Championship"", ""Eredivisie"", ""Jupiler Pro League"", ""La Liga"", ""League One"", ""Liga Profesional"", ""Ligue 1"", ""Ligue 2"", ""Major League Soccer"", ""Premiership"", ""Primeira Liga"",  ""Primera A"", ""Serie A"",  ""Super League"", ""Superliga"", ""Primera División""]","[2023,2024]",0
+7,25,Legia Warszawa,statsbomb,YWxleEB0cmFpdHNpbnNpZ2h0cy5jb206bFdCTjJ4SWU=,"[78, 10, 75, 38, 88, 6, 108, 250, 46, 76, 13, 8, 111, 1281, 80, 60, 77, 79, 124, 42]",,"[2021, 2022, 2023, 2024]",1
+8,300,Melbourne FC,champion,,,"[""AFL"", ""AFLW"", ""VFL"", ""VFLW"", ""WAFL"", ""WAFLW"", ""SANFL"", ""SANFLW"", ""U18 Boys Championships"", ""U18 Girls Championships"", ""Coates League Boys"", ""Coates League Girls"", ""WAFL Colts"",  ""WAFL Reserves"", ""SANFL Reserves"", ""SANFL U18""]",[2024],0
+9,301,Fremantle FC,champion,,,"[""AFL"", ""AFLW"", ""VFL"", ""VFLW"", ""WAFL"", ""WAFLW"", ""SANFL"", ""SANFLW"", ""U18 Boys Championships"", ""U18 Girls Championships"", ""Coates League Boys"", ""Coates League Girls"", ""WAFL Colts"",  ""WAFL Reserves"", ""SANFL Reserves"", ""SANFL U18""]",[2024],0
+10,302,Melbourne FC - Recruitment,champion,,,"[""AFL"", ""AFLW"", ""VFL"", ""VFLW"", ""WAFL"", ""WAFLW"", ""SANFL"", ""SANFLW"", ""U18 Boys Championships"", ""U18 Girls Championships"", ""Coates League Boys"", ""Coates League Girls"", ""WAFL Colts"",  ""WAFL Reserves"", ""SANFL Reserves"", ""SANFL U18""]",[2024],0
+11,92,internal demo,statsbomb,dG9tLmNvZmZpZWxkQG51ZmMuY28udWs6ZWoxeWZiaFQ=,,"[""Premier League"", ""1. Bundesliga"", ""La Liga"", ""Ligue 1"", ""Serie A""]","[2021, 2022, 2023,2024]",1
+12,98,Wyscout Demo,wyscout,,,,,0
+13,21,SK Rapid Wien,wyscout,,,,,0
+14,22,Spezia Calcio,wyscout,,,,,0
+15,23,Al-Ettifaq FC,wyscout,,,,,0
+16,24,Cesena FC,wyscout,,,,,0
+17,26,The Athletic,wyscout,,,,,0
+18,27,Melbourne Victory FC,wyscout,,,,,0
+19,28,Football Association of Ireland,wyscout,,,,,0
+20,98,Wyscout testing,wyscout,,,,,0
+21,29,Stockport County FC,wyscout,,,,,0
+22,30,Club Brugge KV,wyscout,,,,,0
+23,4,wyscout-demo,wyscout-demo,,,,,0
+24,303,new-afl,new-afl,,,"[""AFL"", ""AFLW"", ""VFL"", ""VFLW"", ""WAFL"", ""WAFLW"", ""SANFL"", ""SANFLW"", ""U18 Boys Championships"", ""U18 Girls Championships"", ""Coates League Boys"", ""Coates League Girls"", ""WAFL Colts"",  ""WAFL Reserves"", ""SANFL Reserves"", ""SANFL U18""]",[2024],0
+25,32,womens-leagues,womens-leagues,,,,,0
+26,33,leixoes,leixoes,,,,,0
+27,34,mens-demo,wyscout,,,,,0
+28,35,rvcorp,wyscout,,,,,0
+29,36,asroma,wyscout,,,,,0
+30,37,asd,wyscout,,,,,0
+31,38,aiff,wyscout,,,,,0
+32,39,feyenoord,wyscout,,,,,0
+33,40,feyenoord-vrouwen,wyscout,,,,,0
+34,41,queensparkfc,wyscout,,,,,0
+35,31,clubbrugge,wyscout,,,,,0
+36,304,geelongcats,champion,,,"['AFL', 'AFLW', 'VFL', 'VFLW', 'WAFL', 'WAFLW', 'SANFL', 'SANFLW', 'U18 Boys Championships', 'U18 Girls Championships', 'Coates League Boys', 'Coates League Girls', 'WAFL Colts', 'WAFL Reserves', 'SANFL Reserves', 'SANFL U18']",[2024],0
+37,,salfordcityfc,wyscout,,,,,0
+38,,cesenafc,wyscout,,,,,0
+39,,heracles,wyscout,,,,,0
+,450,trial-test,wyscout,,,,,
+,45,fcbayern,wyscout,,,,,
+,46,faw,wyscout,,,,,
+,47,leixoes,wyscout,,,,,
+,48,juventus,wyscout,,,,,
+,48,juventus,wyscout,,,,,
+,49,leytonorient,wyscout,,,,,
+,50,oxfordcityfc,wyscout,,,,,
+,51,melbournevictory,wyscout,,,,,
+,52,alhilal,wyscout,,,,,
+,53,jimf,wyscout,,,,,
+,54,neil,wyscout,,,,,
+,54,neil,wyscout,,,,,
+,55,joe,wyscout,,,,,
+,56,jmont,wyscout,,,,,
+,57,sisu,wyscout,,,,,
+,58,udoliveirense,wyscout,,,,,
+,59,rangers,wyscout,,,,,
+,60,feyenoord-vrouwen,wyscout,,,,,
+,61,sfv,wyscout,,,,,
+,62,frontale,wyscout,,,,,
+,63,rsca,wyscout,,,,,
+,65,fck,wyscout,,,,,
+,66,usmnt,wyscout,,,,,
+,67,scottishfa,wyscout,,,,,
+,68,blackpoolfc,wyscout,,,,,
+,69,uswnt,wyscout,,,,,
+,70,assistwomens,wyscout,,,,,
+,71,assistwomens-mens,wyscout,,,,,
+,71,defy-women,wyscout,,,,,
+,72,defy-men,wyscout,,,,,
+,73,defy-women,wyscout,,,,,
+,74,randersfc,wyscout,,,,,
+,75,youth-demo,wyscout,,,,,
+,76,aab,wyscout,,,,,
+,77,fcz,wyscout,,,,,
+,78,cardiffcityfc,wyscout,,,,,
+,79,fordham,wyscout,,,,,
+,80,andrewcronyn,champion,,,,,
+,81,cricketaus,wyscout,,,,,
+,82,andyoboyle,wyscout,,,,,

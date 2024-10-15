@@ -1,0 +1,619 @@
+﻿clientID,POS,traitName,traitWgt,metricName,metricWgt,statName,statWgt,inverse
+4,CF,SCORING,0.48,Goalscoring,0.45,goals90,0.53,0
+4,CF,SCORING,0.48,Goalscoring,0.45,goalsPassesRatio,0.47,0
+4,CF,SCORING,0.48,Goalscoring,0.45,goalsWithoutPenalties90,0,0
+4,CF,SCORING,0.48,Shooting,0.19,headShots90,0.442,0
+4,CF,SCORING,0.48,Shooting,0.19,shots90,0.193,0
+4,CF,SCORING,0.48,Shooting,0.19,shotsBlocked90,0.143,1
+4,CF,SCORING,0.48,Shooting,0.19,shotsOnTarget90,0.132,0
+4,CF,SCORING,0.48,Shooting,0.19,xgShot90,0.056,0
+4,CF,SCORING,0.48,Shooting,0.19,shotsPassesRatio,0.034,0
+4,CF,SCORING,0.48,Conversion,0.21,goalConversionPct,0.571,0
+4,CF,SCORING,0.48,Conversion,0.21,headShotsOnTargetPct,0.25,0
+4,CF,SCORING,0.48,Conversion,0.21,goalsShotsRatio,0.106,0
+4,CF,SCORING,0.48,Conversion,0.21,goalsShotsOnTargetRatio,0.073,0
+4,CF,SCORING,0.48,Positioning,0.15,passesToFinalThird90,0.285,0
+4,CF,SCORING,0.48,Positioning,0.15,progressiveRun90,0.28,0
+4,CF,SCORING,0.48,Positioning,0.15,touchInBox90,0.182,0
+4,CF,SCORING,0.48,Positioning,0.15,passesToFinalThirdRatio,0.13,0
+4,CF,SCORING,0.48,Positioning,0.15,touchInBoxReceivedPassRatio,0.123,0
+4,CF,CREATING,0.25,Assists,0.33,assists90,0.439,0
+4,CF,CREATING,0.25,Assists,0.33,secondAssists90,0.144,0
+4,CF,CREATING,0.25,Assists,0.33,shotAssists90,0.142,0
+4,CF,CREATING,0.25,Assists,0.33,shotOnTargetAssists90,0.122,0
+4,CF,CREATING,0.25,Assists,0.33,thirdAssists90,0.077,0
+4,CF,CREATING,0.25,Assists,0.33,xgAssist90,0.046,0
+4,CF,CREATING,0.25,Assists,0.33,successfulShotAssistsPct,0.029,0
+4,CF,CREATING,0.25,Assists,0.33,assistsPassesRatio,0,0
+4,CF,CREATING,0.25,Crossing,0.27,crosses90,0.52,0
+4,CF,CREATING,0.25,Crossing,0.27,successfulCrosses90,0.238,0
+4,CF,CREATING,0.25,Crossing,0.27,crossesPassesRatio,0.177,0
+4,CF,CREATING,0.25,Crossing,0.27,successfulCrossesPct,0.065,0
+4,CF,CREATING,0.25,Dribbling,0.26,dribbles90,0.416,0
+4,CF,CREATING,0.25,Dribbling,0.26,foulsSuffered90,0.186,0
+4,CF,CREATING,0.25,Dribbling,0.26,successfulDribbles90,0.149,0
+4,CF,CREATING,0.25,Dribbling,0.26,successfulDribblesPct,0.117,0
+4,CF,CREATING,0.25,Dribbling,0.26,dribblesPassesRatio,0.102,0
+4,CF,CREATING,0.25,Dribbling,0.26,offensiveDuelsWonPct,0.03,0
+4,CF,CREATING,0.25,Comb Play,0.14,dangerousOwnHalfLosses90,0.315,1
+4,CF,CREATING,0.25,Comb Play,0.14,linkupPlays90,0.193,0
+4,CF,CREATING,0.25,Comb Play,0.14,missedBalls90,0.172,1
+4,CF,CREATING,0.25,Comb Play,0.14,progressivePasses90,0.16,0
+4,CF,CREATING,0.25,Comb Play,0.14,smartPasses90,0.137,0
+4,CF,CREATING,0.25,Comb Play,0.14,successfulLinkupPlays90,0.023,0
+4,CF,PASSING,0.15,Involvement,0.32,passes90,0.61,0
+4,CF,PASSING,0.15,Involvement,0.32,receivedPass90,0.346,0
+4,CF,PASSING,0.15,Involvement,0.32,receivedPassRatio,0.045,0
+4,CF,PASSING,0.15,Accuracy,0.26,ballLosses90,0.26,1
+4,CF,PASSING,0.15,Accuracy,0.26,ownHalfLosses90,0.159,1
+4,CF,PASSING,0.15,Accuracy,0.26,successfulKeyPassesPct,0.143,0
+4,CF,PASSING,0.15,Accuracy,0.26,successfulLongPassesPct,0.142,0
+4,CF,PASSING,0.15,Accuracy,0.26,successfulPassesPct,0.139,0
+4,CF,PASSING,0.15,Accuracy,0.26,successfulPassesToFinalThirdPct,0.107,0
+4,CF,PASSING,0.15,Accuracy,0.26,successfulProgressivePassesPct,0.05,0
+4,CF,PASSING,0.15,Accuracy,0.26,successfulSmartPassesPct,0,0
+4,CF,PASSING,0.15,Accuracy,0.26,successfulThroughPassesPct,0,0
+4,CF,PASSING,0.15,Accuracy,0.26,successfulVerticalPassesPct,0,0
+4,CF,PASSING,0.15,Direction,0.13,backPassesPct,0.5,1
+4,CF,PASSING,0.15,Direction,0.13,forwardPassesPct,0.255,0
+4,CF,PASSING,0.15,Direction,0.13,lateralPassesPct,0.245,1
+4,CF,PASSING,0.15,Direction,0.13,verticalPassesPct,0,0
+4,CF,PASSING,0.15,Intent,0.29,attackingActions90,0.252,0
+4,CF,PASSING,0.15,Intent,0.29,successfulAttackingActions90,0.204,0
+4,CF,PASSING,0.15,Intent,0.29,successfulAttackingActionsPct,0.158,0
+4,CF,PASSING,0.15,Intent,0.29,keyPasses90,0.127,0
+4,CF,PASSING,0.15,Intent,0.29,keyPassesRatio,0.113,0
+4,CF,PASSING,0.15,Intent,0.29,longPassLength,0.076,0
+4,CF,PASSING,0.15,Intent,0.29,longPasses90,0.049,0
+4,CF,PASSING,0.15,Intent,0.29,throughPasses90,0.022,0
+4,CF,DEFENDING,0.12,Aerial,0.58,aerialDuels90,0.578,0
+4,CF,DEFENDING,0.12,Aerial,0.58,fieldAerialDuels90,0.337,0
+4,CF,DEFENDING,0.12,Aerial,0.58,fieldAerialDuelsWon90,0.085,0
+4,CF,DEFENDING,0.12,Aerial,0.58,aerialDuelsWon90,0,0
+4,CF,DEFENDING,0.12,Aerial,0.58,aerialDuelsWonPct,0,0
+4,CF,DEFENDING,0.12,Aerial,0.58,fieldAerialDuelsWonPct,0,0
+4,CF,DEFENDING,0.12,On Ball,0.28,defensiveActions90,0.287,0
+4,CF,DEFENDING,0.12,On Ball,0.28,successfulDefensiveAction90,0.133,0
+4,CF,DEFENDING,0.12,On Ball,0.28,successfulDefensiveActionPct,0.122,0
+4,CF,DEFENDING,0.12,On Ball,0.28,defensiveDuels90,0.097,0
+4,CF,DEFENDING,0.12,On Ball,0.28,defensiveDuelsWon90,0.078,0
+4,CF,DEFENDING,0.12,On Ball,0.28,defensiveDuelsWonPct,0.069,0
+4,CF,DEFENDING,0.12,On Ball,0.28,dribblesAgainst90,0.061,0
+4,CF,DEFENDING,0.12,On Ball,0.28,dribblesAgainstWon90,0.056,0
+4,CF,DEFENDING,0.12,On Ball,0.28,dribblesAgainstWonPct,0.033,0
+4,CF,DEFENDING,0.12,On Ball,0.28,pressingDuels90,0.028,0
+4,CF,DEFENDING,0.12,On Ball,0.28,pressingDuelsWon90,0.022,0
+4,CF,DEFENDING,0.12,On Ball,0.28,pressingDuelsWonPct,0.013,0
+4,CF,DEFENDING,0.12,On Ball,0.28,slidingTackles90,0.003,0
+4,CF,DEFENDING,0.12,On Ball,0.28,successfulSlidingTackles90,0,0
+4,CF,DEFENDING,0.12,On Ball,0.28,successfulSlidingTacklesPct,0,0
+4,CF,DEFENDING,0.12,Off Ball,0.12,ballRecoveries90,0.29,0
+4,CF,DEFENDING,0.12,Off Ball,0.12,clearances90,0.177,0
+4,CF,DEFENDING,0.12,Off Ball,0.12,counterpressingRecoveries90,0.125,0
+4,CF,DEFENDING,0.12,Off Ball,0.12,dangerousOpponentHalfRecoveries90,0.101,0
+4,CF,DEFENDING,0.12,Off Ball,0.12,interceptions90,0.095,0
+4,CF,DEFENDING,0.12,Off Ball,0.12,looseBallDuels90,0.082,0
+4,CF,DEFENDING,0.12,Off Ball,0.12,looseBallDuelsWon90,0.06,0
+4,CF,DEFENDING,0.12,Off Ball,0.12,looseBallDuelsWonPct,0.031,0
+4,CF,DEFENDING,0.12,Off Ball,0.12,opponentHalfRecoveries90,0.021,0
+4,CF,DEFENDING,0.12,Off Ball,0.12,recoveries90,0.019,0
+4,CF,DEFENDING,0.12,Fouls,0.02,directRedCards90,0.34,1
+4,CF,DEFENDING,0.12,Fouls,0.02,fouls90,0.276,1
+4,CF,DEFENDING,0.12,Fouls,0.02,redCards90,0.166,1
+4,CF,DEFENDING,0.12,Fouls,0.02,yellowCards90,0.117,1
+4,CF,DEFENDING,0.12,Fouls,0.02,yellowCardsPerFoul,0.1,1
+4,AM,SCORING,0.26,Goalscoring,0.4,goals90,0.53,0
+4,AM,SCORING,0.26,Goalscoring,0.4,goalsPassesRatio,0.47,0
+4,AM,SCORING,0.26,Goalscoring,0.4,goalsWithoutPenalties90,0,0
+4,AM,SCORING,0.26,Shooting,0.31,headShots90,0.425,0
+4,AM,SCORING,0.26,Shooting,0.31,shots90,0.168,0
+4,AM,SCORING,0.26,Shooting,0.31,shotsBlocked90,0.154,1
+4,AM,SCORING,0.26,Shooting,0.31,shotsOnTarget90,0.126,0
+4,AM,SCORING,0.26,Shooting,0.31,xgShot90,0.077,0
+4,AM,SCORING,0.26,Shooting,0.31,shotsPassesRatio,0.05,0
+4,AM,SCORING,0.26,Conversion,0.15,goalConversionPct,0.568,0
+4,AM,SCORING,0.26,Conversion,0.15,headShotsOnTargetPct,0.25,0
+4,AM,SCORING,0.26,Conversion,0.15,goalsShotsRatio,0.111,0
+4,AM,SCORING,0.26,Conversion,0.15,goalsShotsOnTargetRatio,0.071,0
+4,AM,SCORING,0.26,Positioning,0.14,passesToFinalThird90,0.301,0
+4,AM,SCORING,0.26,Positioning,0.14,progressiveRun90,0.23,0
+4,AM,SCORING,0.26,Positioning,0.14,touchInBox90,0.198,0
+4,AM,SCORING,0.26,Positioning,0.14,passesToFinalThirdRatio,0.164,0
+4,AM,SCORING,0.26,Positioning,0.14,touchInBoxReceivedPassRatio,0.107,0
+4,AM,CREATING,0.42,Assists,0.45,assists90,0.381,0
+4,AM,CREATING,0.42,Assists,0.45,secondAssists90,0.136,0
+4,AM,CREATING,0.42,Assists,0.45,shotAssists90,0.126,0
+4,AM,CREATING,0.42,Assists,0.45,shotOnTargetAssists90,0.124,0
+4,AM,CREATING,0.42,Assists,0.45,thirdAssists90,0.099,0
+4,AM,CREATING,0.42,Assists,0.45,xgAssist90,0.064,0
+4,AM,CREATING,0.42,Assists,0.45,successfulShotAssistsPct,0.037,0
+4,AM,CREATING,0.42,Assists,0.45,assistsPassesRatio,0.032,0
+4,AM,CREATING,0.42,Crossing,0.22,crosses90,0.491,0
+4,AM,CREATING,0.42,Crossing,0.22,successfulCrosses90,0.251,0
+4,AM,CREATING,0.42,Crossing,0.22,crossesPassesRatio,0.186,0
+4,AM,CREATING,0.42,Crossing,0.22,successfulCrossesPct,0.072,0
+4,AM,CREATING,0.42,Dribbling,0.17,dribbles90,0.368,0
+4,AM,CREATING,0.42,Dribbling,0.17,foulsSuffered90,0.215,0
+4,AM,CREATING,0.42,Dribbling,0.17,successfulDribbles90,0.153,0
+4,AM,CREATING,0.42,Dribbling,0.17,successfulDribblesPct,0.138,0
+4,AM,CREATING,0.42,Dribbling,0.17,dribblesPassesRatio,0.104,0
+4,AM,CREATING,0.42,Dribbling,0.17,offensiveDuelsWonPct,0.022,0
+4,AM,CREATING,0.42,Comb Play,0.16,dangerousOwnHalfLosses90,0.317,1
+4,AM,CREATING,0.42,Comb Play,0.16,linkupPlays90,0.193,0
+4,AM,CREATING,0.42,Comb Play,0.16,missedBalls90,0.169,1
+4,AM,CREATING,0.42,Comb Play,0.16,progressivePasses90,0.163,0
+4,AM,CREATING,0.42,Comb Play,0.16,smartPasses90,0.142,0
+4,AM,CREATING,0.42,Comb Play,0.16,successfulLinkupPlays90,0.018,0
+4,AM,PASSING,0.18,Involvement,0.14,passes90,0.625,0
+4,AM,PASSING,0.18,Involvement,0.14,receivedPass90,0.341,0
+4,AM,PASSING,0.18,Involvement,0.14,receivedPassRatio,0.034,0
+4,AM,PASSING,0.18,Accuracy,0.25,ballLosses90,0.226,1
+4,AM,PASSING,0.18,Accuracy,0.25,ownHalfLosses90,0.147,1
+4,AM,PASSING,0.18,Accuracy,0.25,successfulKeyPassesPct,0.126,0
+4,AM,PASSING,0.18,Accuracy,0.25,successfulLongPassesPct,0.123,0
+4,AM,PASSING,0.18,Accuracy,0.25,successfulPassesPct,0.12,0
+4,AM,PASSING,0.18,Accuracy,0.25,successfulPassesToFinalThirdPct,0.098,0
+4,AM,PASSING,0.18,Accuracy,0.25,successfulProgressivePassesPct,0.085,0
+4,AM,PASSING,0.18,Accuracy,0.25,successfulSmartPassesPct,0.074,0
+4,AM,PASSING,0.18,Accuracy,0.25,successfulThroughPassesPct,0,0
+4,AM,PASSING,0.18,Accuracy,0.25,successfulVerticalPassesPct,0,0
+4,AM,PASSING,0.18,Direction,0.3,backPassesPct,0.5,1
+4,AM,PASSING,0.18,Direction,0.3,forwardPassesPct,0.255,0
+4,AM,PASSING,0.18,Direction,0.3,lateralPassesPct,0.245,1
+4,AM,PASSING,0.18,Direction,0.3,verticalPassesPct,0,0
+4,AM,PASSING,0.18,Intent,0.31,attackingActions90,0.249,0
+4,AM,PASSING,0.18,Intent,0.31,successfulAttackingActions90,0.204,0
+4,AM,PASSING,0.18,Intent,0.31,successfulAttackingActionsPct,0.158,0
+4,AM,PASSING,0.18,Intent,0.31,keyPasses90,0.126,0
+4,AM,PASSING,0.18,Intent,0.31,keyPassesRatio,0.109,0
+4,AM,PASSING,0.18,Intent,0.31,longPassLength,0.08,0
+4,AM,PASSING,0.18,Intent,0.31,longPasses90,0.053,0
+4,AM,PASSING,0.18,Intent,0.31,throughPasses90,0.022,0
+4,AM,DEFENDING,0.14,Aerial,0.12,aerialDuels90,0.616,0
+4,AM,DEFENDING,0.14,Aerial,0.12,fieldAerialDuels90,0.3,0
+4,AM,DEFENDING,0.14,Aerial,0.12,fieldAerialDuelsWon90,0.084,0
+4,AM,DEFENDING,0.14,Aerial,0.12,aerialDuelsWon90,0,0
+4,AM,DEFENDING,0.14,Aerial,0.12,aerialDuelsWonPct,0,0
+4,AM,DEFENDING,0.14,Aerial,0.12,fieldAerialDuelsWonPct,0,0
+4,AM,DEFENDING,0.14,On Ball,0.27,defensiveActions90,0.293,0
+4,AM,DEFENDING,0.14,On Ball,0.27,successfulDefensiveAction90,0.143,0
+4,AM,DEFENDING,0.14,On Ball,0.27,successfulDefensiveActionPct,0.121,0
+4,AM,DEFENDING,0.14,On Ball,0.27,defensiveDuels90,0.088,0
+4,AM,DEFENDING,0.14,On Ball,0.27,defensiveDuelsWon90,0.077,0
+4,AM,DEFENDING,0.14,On Ball,0.27,defensiveDuelsWonPct,0.068,0
+4,AM,DEFENDING,0.14,On Ball,0.27,dribblesAgainst90,0.06,0
+4,AM,DEFENDING,0.14,On Ball,0.27,dribblesAgainstWon90,0.056,0
+4,AM,DEFENDING,0.14,On Ball,0.27,dribblesAgainstWonPct,0.034,0
+4,AM,DEFENDING,0.14,On Ball,0.27,pressingDuels90,0.026,0
+4,AM,DEFENDING,0.14,On Ball,0.27,pressingDuelsWon90,0.019,0
+4,AM,DEFENDING,0.14,On Ball,0.27,pressingDuelsWonPct,0.013,0
+4,AM,DEFENDING,0.14,On Ball,0.27,slidingTackles90,0.002,0
+4,AM,DEFENDING,0.14,On Ball,0.27,successfulSlidingTackles90,0,0
+4,AM,DEFENDING,0.14,On Ball,0.27,successfulSlidingTacklesPct,0,0
+4,AM,DEFENDING,0.14,Off Ball,0.44,ballRecoveries90,0.264,0
+4,AM,DEFENDING,0.14,Off Ball,0.44,clearances90,0.173,0
+4,AM,DEFENDING,0.14,Off Ball,0.44,counterpressingRecoveries90,0.139,0
+4,AM,DEFENDING,0.14,Off Ball,0.44,dangerousOpponentHalfRecoveries90,0.1,0
+4,AM,DEFENDING,0.14,Off Ball,0.44,interceptions90,0.096,0
+4,AM,DEFENDING,0.14,Off Ball,0.44,looseBallDuels90,0.082,0
+4,AM,DEFENDING,0.14,Off Ball,0.44,looseBallDuelsWon90,0.052,0
+4,AM,DEFENDING,0.14,Off Ball,0.44,looseBallDuelsWonPct,0.047,0
+4,AM,DEFENDING,0.14,Off Ball,0.44,opponentHalfRecoveries90,0.028,0
+4,AM,DEFENDING,0.14,Off Ball,0.44,recoveries90,0.02,0
+4,AM,DEFENDING,0.14,Fouls,0.17,directRedCards90,0.352,1
+4,AM,DEFENDING,0.14,Fouls,0.17,fouls90,0.255,1
+4,AM,DEFENDING,0.14,Fouls,0.17,redCards90,0.167,1
+4,AM,DEFENDING,0.14,Fouls,0.17,yellowCards90,0.133,1
+4,AM,DEFENDING,0.14,Fouls,0.17,yellowCardsPerFoul,0.093,1
+4,M,SCORING,0.2,Goalscoring,0.37,goals90,1,0
+4,M,SCORING,0.2,Goalscoring,0.37,goalsPassesRatio,0,0
+4,M,SCORING,0.2,Goalscoring,0.37,goalsWithoutPenalties90,0,0
+4,M,SCORING,0.2,Shooting,0.32,headShots90,0.41,0
+4,M,SCORING,0.2,Shooting,0.32,shots90,0.187,0
+4,M,SCORING,0.2,Shooting,0.32,shotsBlocked90,0.166,1
+4,M,SCORING,0.2,Shooting,0.32,shotsOnTarget90,0.1,0
+4,M,SCORING,0.2,Shooting,0.32,xgShot90,0.074,0
+4,M,SCORING,0.2,Shooting,0.32,shotsPassesRatio,0.063,0
+4,M,SCORING,0.2,Conversion,0.19,goalConversionPct,0.614,0
+4,M,SCORING,0.2,Conversion,0.19,headShotsOnTargetPct,0.248,0
+4,M,SCORING,0.2,Conversion,0.19,goalsShotsRatio,0.088,0
+4,M,SCORING,0.2,Conversion,0.19,goalsShotsOnTargetRatio,0.051,0
+4,M,SCORING,0.2,Positioning,0.12,passesToFinalThird90,0.315,0
+4,M,SCORING,0.2,Positioning,0.12,progressiveRun90,0.224,0
+4,M,SCORING,0.2,Positioning,0.12,touchInBox90,0.198,0
+4,M,SCORING,0.2,Positioning,0.12,passesToFinalThirdRatio,0.172,0
+4,M,SCORING,0.2,Positioning,0.12,touchInBoxReceivedPassRatio,0.092,0
+4,M,CREATING,0.25,Assists,0.42,assists90,0.388,0
+4,M,CREATING,0.25,Assists,0.42,secondAssists90,0.144,0
+4,M,CREATING,0.25,Assists,0.42,shotAssists90,0.143,0
+4,M,CREATING,0.25,Assists,0.42,shotOnTargetAssists90,0.119,0
+4,M,CREATING,0.25,Assists,0.42,thirdAssists90,0.099,0
+4,M,CREATING,0.25,Assists,0.42,xgAssist90,0.067,0
+4,M,CREATING,0.25,Assists,0.42,successfulShotAssistsPct,0.041,0
+4,M,CREATING,0.25,Assists,0.42,assistsPassesRatio,0,0
+4,M,CREATING,0.25,Crossing,0.28,crosses90,0.463,0
+4,M,CREATING,0.25,Crossing,0.28,successfulCrosses90,0.286,0
+4,M,CREATING,0.25,Crossing,0.28,crossesPassesRatio,0.189,0
+4,M,CREATING,0.25,Crossing,0.28,successfulCrossesPct,0.063,0
+4,M,CREATING,0.25,Dribbling,0.17,dribbles90,0.352,0
+4,M,CREATING,0.25,Dribbling,0.17,foulsSuffered90,0.208,0
+4,M,CREATING,0.25,Dribbling,0.17,successfulDribbles90,0.162,0
+4,M,CREATING,0.25,Dribbling,0.17,successfulDribblesPct,0.149,0
+4,M,CREATING,0.25,Dribbling,0.17,dribblesPassesRatio,0.116,0
+4,M,CREATING,0.25,Dribbling,0.17,offensiveDuelsWonPct,0.013,0
+4,M,CREATING,0.25,Comb Play,0.13,dangerousOwnHalfLosses90,0.317,1
+4,M,CREATING,0.25,Comb Play,0.13,linkupPlays90,0.181,0
+4,M,CREATING,0.25,Comb Play,0.13,missedBalls90,0.169,1
+4,M,CREATING,0.25,Comb Play,0.13,progressivePasses90,0.164,0
+4,M,CREATING,0.25,Comb Play,0.13,smartPasses90,0.152,0
+4,M,CREATING,0.25,Comb Play,0.13,successfulLinkupPlays90,0.017,0
+4,M,PASSING,0.35,Involvement,0.53,passes90,0.632,0
+4,M,PASSING,0.35,Involvement,0.53,receivedPass90,0.338,0
+4,M,PASSING,0.35,Involvement,0.53,receivedPassRatio,0.029,0
+4,M,PASSING,0.35,Accuracy,0.24,ballLosses90,0.27,1
+4,M,PASSING,0.35,Accuracy,0.24,ownHalfLosses90,0.168,1
+4,M,PASSING,0.35,Accuracy,0.24,successfulKeyPassesPct,0.143,0
+4,M,PASSING,0.35,Accuracy,0.24,successfulLongPassesPct,0.138,0
+4,M,PASSING,0.35,Accuracy,0.24,successfulPassesPct,0.115,0
+4,M,PASSING,0.35,Accuracy,0.24,successfulPassesToFinalThirdPct,0.091,0
+4,M,PASSING,0.35,Accuracy,0.24,successfulProgressivePassesPct,0.075,0
+4,M,PASSING,0.35,Accuracy,0.24,successfulSmartPassesPct,0,0
+4,M,PASSING,0.35,Accuracy,0.24,successfulThroughPassesPct,0,0
+4,M,PASSING,0.35,Accuracy,0.24,successfulVerticalPassesPct,0,0
+4,M,PASSING,0.35,Direction,0.12,backPassesPct,0.5,1
+4,M,PASSING,0.35,Direction,0.12,forwardPassesPct,0.254,0
+4,M,PASSING,0.35,Direction,0.12,lateralPassesPct,0.245,1
+4,M,PASSING,0.35,Direction,0.12,verticalPassesPct,0,0
+4,M,PASSING,0.35,Intent,0.11,attackingActions90,0.255,0
+4,M,PASSING,0.35,Intent,0.11,successfulAttackingActions90,0.245,0
+4,M,PASSING,0.35,Intent,0.11,successfulAttackingActionsPct,0.148,0
+4,M,PASSING,0.35,Intent,0.11,keyPasses90,0.138,0
+4,M,PASSING,0.35,Intent,0.11,keyPassesRatio,0.116,0
+4,M,PASSING,0.35,Intent,0.11,longPassLength,0.054,0
+4,M,PASSING,0.35,Intent,0.11,longPasses90,0.043,0
+4,M,PASSING,0.35,Intent,0.11,throughPasses90,0,0
+4,M,DEFENDING,0.2,Aerial,0.17,aerialDuels90,0.605,0
+4,M,DEFENDING,0.2,Aerial,0.17,fieldAerialDuels90,0.302,0
+4,M,DEFENDING,0.2,Aerial,0.17,fieldAerialDuelsWon90,0.093,0
+4,M,DEFENDING,0.2,Aerial,0.17,aerialDuelsWon90,0,0
+4,M,DEFENDING,0.2,Aerial,0.17,aerialDuelsWonPct,0,0
+4,M,DEFENDING,0.2,Aerial,0.17,fieldAerialDuelsWonPct,0,0
+4,M,DEFENDING,0.2,On Ball,0.31,defensiveActions90,0.311,0
+4,M,DEFENDING,0.2,On Ball,0.31,successfulDefensiveAction90,0.144,0
+4,M,DEFENDING,0.2,On Ball,0.31,successfulDefensiveActionPct,0.124,0
+4,M,DEFENDING,0.2,On Ball,0.31,defensiveDuels90,0.093,0
+4,M,DEFENDING,0.2,On Ball,0.31,defensiveDuelsWon90,0.071,0
+4,M,DEFENDING,0.2,On Ball,0.31,defensiveDuelsWonPct,0.07,0
+4,M,DEFENDING,0.2,On Ball,0.31,dribblesAgainst90,0.055,0
+4,M,DEFENDING,0.2,On Ball,0.31,dribblesAgainstWon90,0.047,0
+4,M,DEFENDING,0.2,On Ball,0.31,dribblesAgainstWonPct,0.03,0
+4,M,DEFENDING,0.2,On Ball,0.31,pressingDuels90,0.025,0
+4,M,DEFENDING,0.2,On Ball,0.31,pressingDuelsWon90,0.019,0
+4,M,DEFENDING,0.2,On Ball,0.31,pressingDuelsWonPct,0.01,0
+4,M,DEFENDING,0.2,On Ball,0.31,slidingTackles90,0.002,0
+4,M,DEFENDING,0.2,On Ball,0.31,successfulSlidingTackles90,0,0
+4,M,DEFENDING,0.2,On Ball,0.31,successfulSlidingTacklesPct,0,0
+4,M,DEFENDING,0.2,Off Ball,0.29,ballRecoveries90,0.299,0
+4,M,DEFENDING,0.2,Off Ball,0.29,clearances90,0.173,0
+4,M,DEFENDING,0.2,Off Ball,0.29,counterpressingRecoveries90,0.126,0
+4,M,DEFENDING,0.2,Off Ball,0.29,dangerousOpponentHalfRecoveries90,0.105,0
+4,M,DEFENDING,0.2,Off Ball,0.29,interceptions90,0.087,0
+4,M,DEFENDING,0.2,Off Ball,0.29,looseBallDuels90,0.073,0
+4,M,DEFENDING,0.2,Off Ball,0.29,looseBallDuelsWon90,0.056,0
+4,M,DEFENDING,0.2,Off Ball,0.29,looseBallDuelsWonPct,0.036,0
+4,M,DEFENDING,0.2,Off Ball,0.29,opponentHalfRecoveries90,0.028,0
+4,M,DEFENDING,0.2,Off Ball,0.29,recoveries90,0.016,0
+4,M,DEFENDING,0.2,Fouls,0.23,directRedCards90,0.385,1
+4,M,DEFENDING,0.2,Fouls,0.23,fouls90,0.326,1
+4,M,DEFENDING,0.2,Fouls,0.23,redCards90,0.179,1
+4,M,DEFENDING,0.2,Fouls,0.23,yellowCards90,0.095,1
+4,M,DEFENDING,0.2,Fouls,0.23,yellowCardsPerFoul,0.015,1
+4,DM,SCORING,0.15,Goalscoring,0.4,goals90,1,0
+4,DM,SCORING,0.15,Goalscoring,0.4,goalsPassesRatio,0,0
+4,DM,SCORING,0.15,Goalscoring,0.4,goalsWithoutPenalties90,0,0
+4,DM,SCORING,0.15,Shooting,0.33,headShots90,0.435,0
+4,DM,SCORING,0.15,Shooting,0.33,shots90,0.182,0
+4,DM,SCORING,0.15,Shooting,0.33,shotsBlocked90,0.166,1
+4,DM,SCORING,0.15,Shooting,0.33,shotsOnTarget90,0.096,0
+4,DM,SCORING,0.15,Shooting,0.33,xgShot90,0.072,0
+4,DM,SCORING,0.15,Shooting,0.33,shotsPassesRatio,0.048,0
+4,DM,SCORING,0.15,Conversion,0.17,goalConversionPct,0.662,0
+4,DM,SCORING,0.15,Conversion,0.17,headShotsOnTargetPct,0.23,0
+4,DM,SCORING,0.15,Conversion,0.17,goalsShotsRatio,0.064,0
+4,DM,SCORING,0.15,Conversion,0.17,goalsShotsOnTargetRatio,0.044,0
+4,DM,SCORING,0.15,Positioning,0.1,passesToFinalThird90,0.292,0
+4,DM,SCORING,0.15,Positioning,0.1,progressiveRun90,0.244,0
+4,DM,SCORING,0.15,Positioning,0.1,touchInBox90,0.203,0
+4,DM,SCORING,0.15,Positioning,0.1,passesToFinalThirdRatio,0.15,0
+4,DM,SCORING,0.15,Positioning,0.1,touchInBoxReceivedPassRatio,0.112,0
+4,DM,CREATING,0.24,Assists,0.53,assists90,0.413,0
+4,DM,CREATING,0.24,Assists,0.53,secondAssists90,0.154,0
+4,DM,CREATING,0.24,Assists,0.53,shotAssists90,0.143,0
+4,DM,CREATING,0.24,Assists,0.53,shotOnTargetAssists90,0.142,0
+4,DM,CREATING,0.24,Assists,0.53,thirdAssists90,0.101,0
+4,DM,CREATING,0.24,Assists,0.53,xgAssist90,0.027,0
+4,DM,CREATING,0.24,Assists,0.53,successfulShotAssistsPct,0.02,0
+4,DM,CREATING,0.24,Assists,0.53,assistsPassesRatio,0,0
+4,DM,CREATING,0.24,Crossing,0.19,crosses90,0.549,0
+4,DM,CREATING,0.24,Crossing,0.19,successfulCrosses90,0.258,0
+4,DM,CREATING,0.24,Crossing,0.19,crossesPassesRatio,0.147,0
+4,DM,CREATING,0.24,Crossing,0.19,successfulCrossesPct,0.047,0
+4,DM,CREATING,0.24,Dribbling,0.14,dribbles90,0.435,0
+4,DM,CREATING,0.24,Dribbling,0.14,foulsSuffered90,0.174,0
+4,DM,CREATING,0.24,Dribbling,0.14,successfulDribbles90,0.148,0
+4,DM,CREATING,0.24,Dribbling,0.14,successfulDribblesPct,0.134,0
+4,DM,CREATING,0.24,Dribbling,0.14,dribblesPassesRatio,0.098,0
+4,DM,CREATING,0.24,Dribbling,0.14,offensiveDuelsWonPct,0.012,0
+4,DM,CREATING,0.24,Comb Play,0.14,dangerousOwnHalfLosses90,0.326,1
+4,DM,CREATING,0.24,Comb Play,0.14,linkupPlays90,0.193,0
+4,DM,CREATING,0.24,Comb Play,0.14,missedBalls90,0.175,1
+4,DM,CREATING,0.24,Comb Play,0.14,progressivePasses90,0.162,0
+4,DM,CREATING,0.24,Comb Play,0.14,smartPasses90,0.135,0
+4,DM,CREATING,0.24,Comb Play,0.14,successfulLinkupPlays90,0.008,0
+4,DM,PASSING,0.33,Involvement,0.18,passes90,0.641,0
+4,DM,PASSING,0.33,Involvement,0.18,receivedPass90,0.333,0
+4,DM,PASSING,0.33,Involvement,0.18,receivedPassRatio,0.026,0
+4,DM,PASSING,0.33,Accuracy,0.42,ballLosses90,0.24,1
+4,DM,PASSING,0.33,Accuracy,0.42,ownHalfLosses90,0.157,1
+4,DM,PASSING,0.33,Accuracy,0.42,successfulKeyPassesPct,0.143,0
+4,DM,PASSING,0.33,Accuracy,0.42,successfulLongPassesPct,0.143,0
+4,DM,PASSING,0.33,Accuracy,0.42,successfulPassesPct,0.136,0
+4,DM,PASSING,0.33,Accuracy,0.42,successfulPassesToFinalThirdPct,0.113,0
+4,DM,PASSING,0.33,Accuracy,0.42,successfulProgressivePassesPct,0.068,0
+4,DM,PASSING,0.33,Accuracy,0.42,successfulSmartPassesPct,0,0
+4,DM,PASSING,0.33,Accuracy,0.42,successfulThroughPassesPct,0,0
+4,DM,PASSING,0.33,Accuracy,0.42,successfulVerticalPassesPct,0,0
+4,DM,PASSING,0.33,Direction,0.16,backPassesPct,0.5,1
+4,DM,PASSING,0.33,Direction,0.16,forwardPassesPct,0.253,0
+4,DM,PASSING,0.33,Direction,0.16,lateralPassesPct,0.247,1
+4,DM,PASSING,0.33,Direction,0.16,verticalPassesPct,0,0
+4,DM,PASSING,0.33,Intent,0.24,attackingActions90,0.27,0
+4,DM,PASSING,0.33,Intent,0.24,successfulAttackingActions90,0.216,0
+4,DM,PASSING,0.33,Intent,0.24,successfulAttackingActionsPct,0.179,0
+4,DM,PASSING,0.33,Intent,0.24,keyPasses90,0.129,0
+4,DM,PASSING,0.33,Intent,0.24,keyPassesRatio,0.094,0
+4,DM,PASSING,0.33,Intent,0.24,longPassLength,0.05,0
+4,DM,PASSING,0.33,Intent,0.24,longPasses90,0.044,0
+4,DM,PASSING,0.33,Intent,0.24,throughPasses90,0.017,0
+4,DM,DEFENDING,0.28,Aerial,0.44,aerialDuels90,0.584,0
+4,DM,DEFENDING,0.28,Aerial,0.44,fieldAerialDuels90,0.305,0
+4,DM,DEFENDING,0.28,Aerial,0.44,fieldAerialDuelsWon90,0.111,0
+4,DM,DEFENDING,0.28,Aerial,0.44,aerialDuelsWon90,0,0
+4,DM,DEFENDING,0.28,Aerial,0.44,aerialDuelsWonPct,0,0
+4,DM,DEFENDING,0.28,Aerial,0.44,fieldAerialDuelsWonPct,0,0
+4,DM,DEFENDING,0.28,On Ball,0.34,defensiveActions90,0.323,0
+4,DM,DEFENDING,0.28,On Ball,0.34,successfulDefensiveAction90,0.136,0
+4,DM,DEFENDING,0.28,On Ball,0.34,successfulDefensiveActionPct,0.127,0
+4,DM,DEFENDING,0.28,On Ball,0.34,defensiveDuels90,0.092,0
+4,DM,DEFENDING,0.28,On Ball,0.34,defensiveDuelsWon90,0.077,0
+4,DM,DEFENDING,0.28,On Ball,0.34,defensiveDuelsWonPct,0.064,0
+4,DM,DEFENDING,0.28,On Ball,0.34,dribblesAgainst90,0.048,0
+4,DM,DEFENDING,0.28,On Ball,0.34,dribblesAgainstWon90,0.044,0
+4,DM,DEFENDING,0.28,On Ball,0.34,dribblesAgainstWonPct,0.037,0
+4,DM,DEFENDING,0.28,On Ball,0.34,pressingDuels90,0.021,0
+4,DM,DEFENDING,0.28,On Ball,0.34,pressingDuelsWon90,0.015,0
+4,DM,DEFENDING,0.28,On Ball,0.34,pressingDuelsWonPct,0.014,0
+4,DM,DEFENDING,0.28,On Ball,0.34,slidingTackles90,0.002,0
+4,DM,DEFENDING,0.28,On Ball,0.34,successfulSlidingTackles90,0,0
+4,DM,DEFENDING,0.28,On Ball,0.34,successfulSlidingTacklesPct,0,0
+4,DM,DEFENDING,0.28,Off Ball,0.1,ballRecoveries90,0.311,0
+4,DM,DEFENDING,0.28,Off Ball,0.1,clearances90,0.15,0
+4,DM,DEFENDING,0.28,Off Ball,0.1,counterpressingRecoveries90,0.112,0
+4,DM,DEFENDING,0.28,Off Ball,0.1,dangerousOpponentHalfRecoveries90,0.102,0
+4,DM,DEFENDING,0.28,Off Ball,0.1,interceptions90,0.094,0
+4,DM,DEFENDING,0.28,Off Ball,0.1,looseBallDuels90,0.082,0
+4,DM,DEFENDING,0.28,Off Ball,0.1,looseBallDuelsWon90,0.067,0
+4,DM,DEFENDING,0.28,Off Ball,0.1,looseBallDuelsWonPct,0.037,0
+4,DM,DEFENDING,0.28,Off Ball,0.1,opponentHalfRecoveries90,0.031,0
+4,DM,DEFENDING,0.28,Off Ball,0.1,recoveries90,0.015,0
+4,DM,DEFENDING,0.28,Fouls,0.12,directRedCards90,0.395,1
+4,DM,DEFENDING,0.28,Fouls,0.12,fouls90,0.358,1
+4,DM,DEFENDING,0.28,Fouls,0.12,redCards90,0.178,1
+4,DM,DEFENDING,0.28,Fouls,0.12,yellowCards90,0.062,1
+4,DM,DEFENDING,0.28,Fouls,0.12,yellowCardsPerFoul,0.007,1
+4,FB,SCORING,0.12,Goalscoring,0.36,goals90,1,0
+4,FB,SCORING,0.12,Goalscoring,0.36,goalsPassesRatio,0,0
+4,FB,SCORING,0.12,Goalscoring,0.36,goalsWithoutPenalties90,0,0
+4,FB,SCORING,0.12,Shooting,0.26,headShots90,0.414,0
+4,FB,SCORING,0.12,Shooting,0.26,shots90,0.201,0
+4,FB,SCORING,0.12,Shooting,0.26,shotsBlocked90,0.188,1
+4,FB,SCORING,0.12,Shooting,0.26,shotsOnTarget90,0.123,0
+4,FB,SCORING,0.12,Shooting,0.26,xgShot90,0.074,0
+4,FB,SCORING,0.12,Shooting,0.26,shotsPassesRatio,0,0
+4,FB,SCORING,0.12,Conversion,0.2,goalConversionPct,0.616,0
+4,FB,SCORING,0.12,Conversion,0.2,headShotsOnTargetPct,0.25,0
+4,FB,SCORING,0.12,Conversion,0.2,goalsShotsRatio,0.089,0
+4,FB,SCORING,0.12,Conversion,0.2,goalsShotsOnTargetRatio,0.045,0
+4,FB,SCORING,0.12,Positioning,0.18,passesToFinalThird90,0.304,0
+4,FB,SCORING,0.12,Positioning,0.18,progressiveRun90,0.22,0
+4,FB,SCORING,0.12,Positioning,0.18,touchInBox90,0.202,0
+4,FB,SCORING,0.12,Positioning,0.18,passesToFinalThirdRatio,0.17,0
+4,FB,SCORING,0.12,Positioning,0.18,touchInBoxReceivedPassRatio,0.104,0
+4,FB,CREATING,0.3,Assists,0.3,assists90,0.402,0
+4,FB,CREATING,0.3,Assists,0.3,secondAssists90,0.18,0
+4,FB,CREATING,0.3,Assists,0.3,shotAssists90,0.142,0
+4,FB,CREATING,0.3,Assists,0.3,shotOnTargetAssists90,0.108,0
+4,FB,CREATING,0.3,Assists,0.3,thirdAssists90,0.089,0
+4,FB,CREATING,0.3,Assists,0.3,xgAssist90,0.046,0
+4,FB,CREATING,0.3,Assists,0.3,successfulShotAssistsPct,0.034,0
+4,FB,CREATING,0.3,Assists,0.3,assistsPassesRatio,0,0
+4,FB,CREATING,0.3,Crossing,0.29,crosses90,0.447,0
+4,FB,CREATING,0.3,Crossing,0.29,successfulCrosses90,0.264,0
+4,FB,CREATING,0.3,Crossing,0.29,crossesPassesRatio,0.229,0
+4,FB,CREATING,0.3,Crossing,0.29,successfulCrossesPct,0.06,0
+4,FB,CREATING,0.3,Dribbling,0.26,dribbles90,0.368,0
+4,FB,CREATING,0.3,Dribbling,0.26,foulsSuffered90,0.218,0
+4,FB,CREATING,0.3,Dribbling,0.26,successfulDribbles90,0.153,0
+4,FB,CREATING,0.3,Dribbling,0.26,successfulDribblesPct,0.136,0
+4,FB,CREATING,0.3,Dribbling,0.26,dribblesPassesRatio,0.106,0
+4,FB,CREATING,0.3,Dribbling,0.26,offensiveDuelsWonPct,0.019,0
+4,FB,CREATING,0.3,Comb Play,0.15,dangerousOwnHalfLosses90,0.331,1
+4,FB,CREATING,0.3,Comb Play,0.15,linkupPlays90,0.183,0
+4,FB,CREATING,0.3,Comb Play,0.15,missedBalls90,0.17,1
+4,FB,CREATING,0.3,Comb Play,0.15,progressivePasses90,0.162,0
+4,FB,CREATING,0.3,Comb Play,0.15,smartPasses90,0.149,0
+4,FB,CREATING,0.3,Comb Play,0.15,successfulLinkupPlays90,0.004,0
+4,FB,PASSING,0.24,Involvement,0.3,passes90,0.641,0
+4,FB,PASSING,0.24,Involvement,0.3,receivedPass90,0.336,0
+4,FB,PASSING,0.24,Involvement,0.3,receivedPassRatio,0.023,0
+4,FB,PASSING,0.24,Accuracy,0.22,ballLosses90,0.289,1
+4,FB,PASSING,0.24,Accuracy,0.22,ownHalfLosses90,0.19,1
+4,FB,PASSING,0.24,Accuracy,0.22,successfulKeyPassesPct,0.15,0
+4,FB,PASSING,0.24,Accuracy,0.22,successfulLongPassesPct,0.143,0
+4,FB,PASSING,0.24,Accuracy,0.22,successfulPassesPct,0.132,0
+4,FB,PASSING,0.24,Accuracy,0.22,successfulPassesToFinalThirdPct,0.096,0
+4,FB,PASSING,0.24,Accuracy,0.22,successfulProgressivePassesPct,0,0
+4,FB,PASSING,0.24,Accuracy,0.22,successfulSmartPassesPct,0,0
+4,FB,PASSING,0.24,Accuracy,0.22,successfulThroughPassesPct,0,0
+4,FB,PASSING,0.24,Accuracy,0.22,successfulVerticalPassesPct,0,0
+4,FB,PASSING,0.24,Direction,0.18,backPassesPct,0.5,1
+4,FB,PASSING,0.24,Direction,0.18,forwardPassesPct,0.253,0
+4,FB,PASSING,0.24,Direction,0.18,lateralPassesPct,0.247,1
+4,FB,PASSING,0.24,Direction,0.18,verticalPassesPct,0,0
+4,FB,PASSING,0.24,Intent,0.3,attackingActions90,0.314,0
+4,FB,PASSING,0.24,Intent,0.3,successfulAttackingActions90,0.254,0
+4,FB,PASSING,0.24,Intent,0.3,successfulAttackingActionsPct,0.148,0
+4,FB,PASSING,0.24,Intent,0.3,keyPasses90,0.123,0
+4,FB,PASSING,0.24,Intent,0.3,keyPassesRatio,0.093,0
+4,FB,PASSING,0.24,Intent,0.3,longPassLength,0.049,0
+4,FB,PASSING,0.24,Intent,0.3,longPasses90,0.018,0
+4,FB,PASSING,0.24,Intent,0.3,throughPasses90,0,0
+4,FB,DEFENDING,0.34,Aerial,0.06,aerialDuels90,0.641,0
+4,FB,DEFENDING,0.34,Aerial,0.06,fieldAerialDuels90,0.31,0
+4,FB,DEFENDING,0.34,Aerial,0.06,fieldAerialDuelsWon90,0.049,0
+4,FB,DEFENDING,0.34,Aerial,0.06,aerialDuelsWon90,0,0
+4,FB,DEFENDING,0.34,Aerial,0.06,aerialDuelsWonPct,0,0
+4,FB,DEFENDING,0.34,Aerial,0.06,fieldAerialDuelsWonPct,0,0
+4,FB,DEFENDING,0.34,On Ball,0.43,defensiveActions90,0.311,0
+4,FB,DEFENDING,0.34,On Ball,0.43,successfulDefensiveAction90,0.154,0
+4,FB,DEFENDING,0.34,On Ball,0.43,successfulDefensiveActionPct,0.134,0
+4,FB,DEFENDING,0.34,On Ball,0.43,defensiveDuels90,0.083,0
+4,FB,DEFENDING,0.34,On Ball,0.43,defensiveDuelsWon90,0.075,0
+4,FB,DEFENDING,0.34,On Ball,0.43,defensiveDuelsWonPct,0.069,0
+4,FB,DEFENDING,0.34,On Ball,0.43,dribblesAgainst90,0.06,0
+4,FB,DEFENDING,0.34,On Ball,0.43,dribblesAgainstWon90,0.037,0
+4,FB,DEFENDING,0.34,On Ball,0.43,dribblesAgainstWonPct,0.03,0
+4,FB,DEFENDING,0.34,On Ball,0.43,pressingDuels90,0.023,0
+4,FB,DEFENDING,0.34,On Ball,0.43,pressingDuelsWon90,0.013,0
+4,FB,DEFENDING,0.34,On Ball,0.43,pressingDuelsWonPct,0.009,0
+4,FB,DEFENDING,0.34,On Ball,0.43,slidingTackles90,0.002,0
+4,FB,DEFENDING,0.34,On Ball,0.43,successfulSlidingTackles90,0,0
+4,FB,DEFENDING,0.34,On Ball,0.43,successfulSlidingTacklesPct,0,0
+4,FB,DEFENDING,0.34,Off Ball,0.42,ballRecoveries90,0.272,0
+4,FB,DEFENDING,0.34,Off Ball,0.42,clearances90,0.157,0
+4,FB,DEFENDING,0.34,Off Ball,0.42,counterpressingRecoveries90,0.151,0
+4,FB,DEFENDING,0.34,Off Ball,0.42,dangerousOpponentHalfRecoveries90,0.104,0
+4,FB,DEFENDING,0.34,Off Ball,0.42,interceptions90,0.098,0
+4,FB,DEFENDING,0.34,Off Ball,0.42,looseBallDuels90,0.075,0
+4,FB,DEFENDING,0.34,Off Ball,0.42,looseBallDuelsWon90,0.054,0
+4,FB,DEFENDING,0.34,Off Ball,0.42,looseBallDuelsWonPct,0.042,0
+4,FB,DEFENDING,0.34,Off Ball,0.42,opponentHalfRecoveries90,0.026,0
+4,FB,DEFENDING,0.34,Off Ball,0.42,recoveries90,0.021,0
+4,FB,DEFENDING,0.34,Fouls,0.09,directRedCards90,0.417,1
+4,FB,DEFENDING,0.34,Fouls,0.09,fouls90,0.283,1
+4,FB,DEFENDING,0.34,Fouls,0.09,redCards90,0.153,1
+4,FB,DEFENDING,0.34,Fouls,0.09,yellowCards90,0.117,1
+4,FB,DEFENDING,0.34,Fouls,0.09,yellowCardsPerFoul,0.03,1
+4,CB,SCORING,0.08,Goalscoring,0.44,goals90,1,0
+4,CB,SCORING,0.08,Goalscoring,0.44,goalsPassesRatio,0,0
+4,CB,SCORING,0.08,Goalscoring,0.44,goalsWithoutPenalties90,0,0
+4,CB,SCORING,0.08,Shooting,0.32,headShots90,0.613,0
+4,CB,SCORING,0.08,Shooting,0.32,shots90,0.2,0
+4,CB,SCORING,0.08,Shooting,0.32,shotsBlocked90,0.098,1
+4,CB,SCORING,0.08,Shooting,0.32,shotsOnTarget90,0.069,0
+4,CB,SCORING,0.08,Shooting,0.32,xgShot90,0.019,0
+4,CB,SCORING,0.08,Shooting,0.32,shotsPassesRatio,0,0
+4,CB,SCORING,0.08,Conversion,0.13,goalConversionPct,0.673,0
+4,CB,SCORING,0.08,Conversion,0.13,headShotsOnTargetPct,0.237,0
+4,CB,SCORING,0.08,Conversion,0.13,goalsShotsRatio,0.053,0
+4,CB,SCORING,0.08,Conversion,0.13,goalsShotsOnTargetRatio,0.037,0
+4,CB,SCORING,0.08,Positioning,0.11,passesToFinalThird90,0.393,0
+4,CB,SCORING,0.08,Positioning,0.11,progressiveRun90,0.354,0
+4,CB,SCORING,0.08,Positioning,0.11,touchInBox90,0.141,0
+4,CB,SCORING,0.08,Positioning,0.11,passesToFinalThirdRatio,0.112,0
+4,CB,SCORING,0.08,Positioning,0.11,touchInBoxReceivedPassRatio,0,0
+4,CB,CREATING,0.16,Assists,0.51,assists90,0.461,0
+4,CB,CREATING,0.16,Assists,0.51,secondAssists90,0.146,0
+4,CB,CREATING,0.16,Assists,0.51,shotAssists90,0.143,0
+4,CB,CREATING,0.16,Assists,0.51,shotOnTargetAssists90,0.122,0
+4,CB,CREATING,0.16,Assists,0.51,thirdAssists90,0.067,0
+4,CB,CREATING,0.16,Assists,0.51,xgAssist90,0.038,0
+4,CB,CREATING,0.16,Assists,0.51,successfulShotAssistsPct,0.023,0
+4,CB,CREATING,0.16,Assists,0.51,assistsPassesRatio,0,0
+4,CB,CREATING,0.16,Crossing,0.22,crosses90,0.684,0
+4,CB,CREATING,0.16,Crossing,0.22,successfulCrosses90,0.265,0
+4,CB,CREATING,0.16,Crossing,0.22,crossesPassesRatio,0.051,0
+4,CB,CREATING,0.16,Crossing,0.22,successfulCrossesPct,0,0
+4,CB,CREATING,0.16,Dribbling,0.17,dribbles90,0.423,0
+4,CB,CREATING,0.16,Dribbling,0.17,foulsSuffered90,0.226,0
+4,CB,CREATING,0.16,Dribbling,0.17,successfulDribbles90,0.198,0
+4,CB,CREATING,0.16,Dribbling,0.17,successfulDribblesPct,0.135,0
+4,CB,CREATING,0.16,Dribbling,0.17,dribblesPassesRatio,0.018,0
+4,CB,CREATING,0.16,Dribbling,0.17,offensiveDuelsWonPct,0,0
+4,CB,CREATING,0.16,Comb Play,0.1,dangerousOwnHalfLosses90,0.278,1
+4,CB,CREATING,0.16,Comb Play,0.1,linkupPlays90,0.273,0
+4,CB,CREATING,0.16,Comb Play,0.1,missedBalls90,0.241,1
+4,CB,CREATING,0.16,Comb Play,0.1,progressivePasses90,0.208,0
+4,CB,CREATING,0.16,Comb Play,0.1,smartPasses90,0,0
+4,CB,CREATING,0.16,Comb Play,0.1,successfulLinkupPlays90,0,0
+4,CB,PASSING,0.34,Involvement,0.45,passes90,0.684,0
+4,CB,PASSING,0.34,Involvement,0.45,receivedPass90,0.303,0
+4,CB,PASSING,0.34,Involvement,0.45,receivedPassRatio,0.012,0
+4,CB,PASSING,0.34,Accuracy,0.22,ballLosses90,0.346,1
+4,CB,PASSING,0.34,Accuracy,0.22,ownHalfLosses90,0.248,1
+4,CB,PASSING,0.34,Accuracy,0.22,successfulKeyPassesPct,0.236,0
+4,CB,PASSING,0.34,Accuracy,0.22,successfulLongPassesPct,0.171,0
+4,CB,PASSING,0.34,Accuracy,0.22,successfulPassesPct,0,0
+4,CB,PASSING,0.34,Accuracy,0.22,successfulPassesToFinalThirdPct,0,0
+4,CB,PASSING,0.34,Accuracy,0.22,successfulProgressivePassesPct,0,0
+4,CB,PASSING,0.34,Accuracy,0.22,successfulSmartPassesPct,0,0
+4,CB,PASSING,0.34,Accuracy,0.22,successfulThroughPassesPct,0,0
+4,CB,PASSING,0.34,Accuracy,0.22,successfulVerticalPassesPct,0,0
+4,CB,PASSING,0.34,Direction,0.19,backPassesPct,0.5,1
+4,CB,PASSING,0.34,Direction,0.19,forwardPassesPct,0.251,0
+4,CB,PASSING,0.34,Direction,0.19,lateralPassesPct,0.249,1
+4,CB,PASSING,0.34,Direction,0.19,verticalPassesPct,0,0
+4,CB,PASSING,0.34,Intent,0.14,attackingActions90,0.334,0
+4,CB,PASSING,0.34,Intent,0.14,successfulAttackingActions90,0.214,0
+4,CB,PASSING,0.34,Intent,0.14,successfulAttackingActionsPct,0.142,0
+4,CB,PASSING,0.34,Intent,0.14,keyPasses90,0.126,0
+4,CB,PASSING,0.34,Intent,0.14,keyPassesRatio,0.089,0
+4,CB,PASSING,0.34,Intent,0.14,longPassLength,0.076,0
+4,CB,PASSING,0.34,Intent,0.14,longPasses90,0.02,0
+4,CB,PASSING,0.34,Intent,0.14,throughPasses90,0,0
+4,CB,DEFENDING,0.42,Aerial,0.17,aerialDuels90,0.468,0
+4,CB,DEFENDING,0.42,Aerial,0.17,fieldAerialDuels90,0.344,0
+4,CB,DEFENDING,0.42,Aerial,0.17,fieldAerialDuelsWon90,0.188,0
+4,CB,DEFENDING,0.42,Aerial,0.17,aerialDuelsWon90,0,0
+4,CB,DEFENDING,0.42,Aerial,0.17,aerialDuelsWonPct,0,0
+4,CB,DEFENDING,0.42,Aerial,0.17,fieldAerialDuelsWonPct,0,0
+4,CB,DEFENDING,0.42,On Ball,0.4,defensiveActions90,0.285,0
+4,CB,DEFENDING,0.42,On Ball,0.4,successfulDefensiveAction90,0.141,0
+4,CB,DEFENDING,0.42,On Ball,0.4,successfulDefensiveActionPct,0.119,0
+4,CB,DEFENDING,0.42,On Ball,0.4,defensiveDuels90,0.089,0
+4,CB,DEFENDING,0.42,On Ball,0.4,defensiveDuelsWon90,0.079,0
+4,CB,DEFENDING,0.42,On Ball,0.4,defensiveDuelsWonPct,0.074,0
+4,CB,DEFENDING,0.42,On Ball,0.4,dribblesAgainst90,0.066,0
+4,CB,DEFENDING,0.42,On Ball,0.4,dribblesAgainstWon90,0.045,0
+4,CB,DEFENDING,0.42,On Ball,0.4,dribblesAgainstWonPct,0.041,0
+4,CB,DEFENDING,0.42,On Ball,0.4,pressingDuels90,0.032,0
+4,CB,DEFENDING,0.42,On Ball,0.4,pressingDuelsWon90,0.02,0
+4,CB,DEFENDING,0.42,On Ball,0.4,pressingDuelsWonPct,0.009,0
+4,CB,DEFENDING,0.42,On Ball,0.4,slidingTackles90,0.002,0
+4,CB,DEFENDING,0.42,On Ball,0.4,successfulSlidingTackles90,0,0
+4,CB,DEFENDING,0.42,On Ball,0.4,successfulSlidingTacklesPct,0,0
+4,CB,DEFENDING,0.42,Off Ball,0.39,ballRecoveries90,0.276,0
+4,CB,DEFENDING,0.42,Off Ball,0.39,clearances90,0.158,0
+4,CB,DEFENDING,0.42,Off Ball,0.39,counterpressingRecoveries90,0.145,0
+4,CB,DEFENDING,0.42,Off Ball,0.39,dangerousOpponentHalfRecoveries90,0.111,0
+4,CB,DEFENDING,0.42,Off Ball,0.39,interceptions90,0.096,0
+4,CB,DEFENDING,0.42,Off Ball,0.39,looseBallDuels90,0.079,0
+4,CB,DEFENDING,0.42,Off Ball,0.39,looseBallDuelsWon90,0.056,0
+4,CB,DEFENDING,0.42,Off Ball,0.39,looseBallDuelsWonPct,0.041,0
+4,CB,DEFENDING,0.42,Off Ball,0.39,opponentHalfRecoveries90,0.023,0
+4,CB,DEFENDING,0.42,Off Ball,0.39,recoveries90,0.015,0
+4,CB,DEFENDING,0.42,Fouls,0.04,directRedCards90,0.495,1
+4,CB,DEFENDING,0.42,Fouls,0.04,fouls90,0.273,1
+4,CB,DEFENDING,0.42,Fouls,0.04,redCards90,0.147,1
+4,CB,DEFENDING,0.42,Fouls,0.04,yellowCards90,0.084,1
+4,CB,DEFENDING,0.42,Fouls,0.04,yellowCardsPerFoul,0.001,1
