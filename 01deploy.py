@@ -3,13 +3,8 @@ import json
 import boto3
 import os
 
-# Initialize S3 client
 s3_client = boto3.client("s3")
 
-print("Starting the script...")
-
-# Step 1: Read init.json containing a list of tenant configurations
-print("Reading init.json...")
 with open("init.json", "r", encoding="utf-8") as f:
     try:
         tenants = json.load(f)

@@ -2,7 +2,7 @@
     "CUSTOMER": {
         "DEFAULT_TEAM": "Chelsea FC",
         "DEFAULT_LEAGUE": "ENG D1 Premier League",
-        "CURRENT_SEASON": "2024",
+        "CURRENT_SEASON": "2025",
         "EXCLUDE": []
     },
     "TRAITS": {
@@ -41,13 +41,13 @@
     ],
     "COLORS": {
         "TRAITS": [
-            "#4040ff",
-            "#ff6600",
-            "#00ff66",
-            "#ff0000"
+            "#318fd6",
+            "#EF9B1F",
+            "#48d13f",
+            "#ea4242"
         ],
         "POSITIONS": [
-            "Blue",
+            "DarkBlue",
             "DodgerBlue",
             "Gold",
             "GoldenRod",
