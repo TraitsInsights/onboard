@@ -1,17 +1,19 @@
 [
-{"tenant_id":82,
-"db_id": 99,
-"tenant_host": "andyoboyle",
-"replicate": "wyscout-trial",
-"users": [
-        {
-            "alias": "demo",
-            "email": "alex@traitsinsights.com"
-        }],
-"details": {
-        "id": "82",
-        "name": "andyoboyle",
-	"provider":"wyscout"
+    {
+        "tenant_id": 86,
+        "db_id": 99,
+        "tenant_host": "michaelparensen",
+        "replicate": "wyscout-trial",
+        "users": [
+            {
+                "alias": "demo",
+                "email": "alex@traitsinsights.com"
+            }
+        ],
+        "details": {
+            "id": "86",
+            "name": "michaelparensen",
+            "provider": "wyscout"
+        }
     }
-}
 ]
