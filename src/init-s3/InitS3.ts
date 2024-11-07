@@ -88,7 +88,7 @@ export class InitS3 {
       workflowDispatchUrl,
       {
         ref: "feat/1894930982-cloud-onboarding", // TODO: change to main
-        input: {
+        inputs: {
           clientName: values.subdomain.subdomain_input.value,
           clientId: String(clientId),
           clientDbId: String(

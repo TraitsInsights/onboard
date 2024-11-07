@@ -67,8 +67,8 @@ export class InitRDS {
     await rdsData.executeStatement(params).promise();
 
     const slackMessage = {
-      channel: "/onboard",
-      text: `Client onboarded: Name: ${input.clientName}, ID: ${input.clientId}, URL: https://${input.clientName}.traitsinsights.app`,
+      channel: "onboard",
+      text: `🎉 *Client Onboarded!* 🎉\n\n*Name:* ${input.clientName}\n*ID:* ${input.clientId}\n*URL:* ${input.clientName}.traitsinsights.app`,
     };
 
     await axios.post("https://slack.com/api/chat.postMessage", slackMessage, {
