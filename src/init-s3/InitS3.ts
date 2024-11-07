@@ -14,7 +14,13 @@ const dbMappings = {
 
 export class InitS3 {
   async invoke(input: SlackOnboardSubmitPayload) {
-    const values = input.view.state.values;
+    const { token } = input.payload;
+
+    if (token !== process.env.SLACK_VERIFICATION_TOKEN) {
+      throw new Error("Invalid verification token");
+    }
+
+    const values = input.payload.view.state.values;
 
     const params = {
       Bucket: "traits-app",
@@ -28,14 +34,14 @@ export class InitS3 {
     }
 
     const folderNames = data.Contents.map((item) =>
-      item.Key ? item.Key.split("/")[2] : "0"
+      item.Key ? item.Key.split("/")[1] : "0"
     ).filter((folder) => /^\d+$/.test(folder));
 
     const maxClientId = Math.max(...folderNames.map(Number));
     const clientId = maxClientId + 1;
 
     await this.uploadDirectory(
-      "s3/wyscout",
+      "traits-deployment/s3/wyscout",
       "traits-app",
       `deployments/${clientId}`
     );
@@ -59,7 +65,12 @@ export class InitS3 {
       })
       .promise();
 
-    const weightsFilePath = path.join("s3", "wyscout", "weights.csv");
+    const weightsFilePath = path.join(
+      "traits-deployment",
+      "s3",
+      "wyscout",
+      "weights.csv"
+    );
     const weightsFileContent = fs.readFileSync(weightsFilePath);
 
     await s3
@@ -71,18 +82,22 @@ export class InitS3 {
       })
       .promise();
 
-    const workflowDispatchUrl = `https://api.github.com/repos/${process.env.GITHUB_REPOSITORY}/actions/workflows/add-cognito-user-pool/dispatches`;
+    // TODO: Set as env variable, 126625830
+    const workflowDispatchUrl = `https://api.github.com/repos/${process.env.GITHUB_REPOSITORY}/actions/workflows/126625830/dispatches`;
     await axios.post(
       workflowDispatchUrl,
       {
-        ref: "main",
-        clientName: values.subdomain.subdomain_input.value,
-        clientId: clientId,
-        clientDbId:
-          dbMappings[
-            values.competition_scope.competition_scope_selection.selected_option
-              .value
-          ],
+        ref: "feat/1894930982-cloud-onboarding", // TODO: change to main
+        input: {
+          clientName: values.subdomain.subdomain_input.value,
+          clientId: String(clientId),
+          clientDbId: String(
+            dbMappings[
+              values.competition_scope.competition_scope_selection
+                .selected_option.value
+            ]
+          ),
+        },
       },
       {
         headers: {

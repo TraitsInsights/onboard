@@ -1,8 +1,8 @@
 import { APIGatewayProxyEvent, APIGatewayProxyResult } from "aws-lambda";
 
 export const generateHandler =
-  <Payload = any>(func: (event: Payload) => Promise<any>) =>
-  async (event: Payload): Promise<APIGatewayProxyResult> => {
+  (func: (event: APIGatewayProxyEvent) => Promise<any>) =>
+  async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
     try {
       await func(event);
 
