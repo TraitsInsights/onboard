@@ -27,10 +27,7 @@ jobs:
       - name: Install dependencies
         run: |
             npm install
-            cd lambdas/init-rds && npm install
-            cd lambdas/init-s3 && npm install
-            cd lambdas/interaction && npm install
-            cd lambdas/onboard && npm install
+            (cd lambdas/init-rds && npm install) & (cd lambdas/init-s3 && npm install) & (cd lambdas/interaction && npm install) & (cd lambdas/onboard && npm install)
 
       - name: Compile TypeScript
         run: npm run build
