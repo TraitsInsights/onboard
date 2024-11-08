@@ -22,8 +22,7 @@ export type SlackOnboardSubmitPayload = {
           data_provider: {
             data_provider_selection: {
               selected_option: {
-                // value: "wyscout" | "statsbomb" | "champion";
-                value: "wyscout";
+                value: "wyscout" | "champion";
               };
             };
           };
@@ -76,4 +75,21 @@ export type InitRDSPayload = {
   clientId: string;
   clientDbId: string;
   userPoolId: string;
+};
+
+export type Config = {
+  CUSTOMER: {
+    DEFAULT_TEAM: string;
+    DEFAULT_LEAGUE: string;
+    CURRENT_SEASON: string;
+    EXCLUDE: string[];
+  };
+  TRAITS: {
+    [key: string]: string[];
+  };
+  POSITIONS: string[];
+  COLORS: {
+    TRAITS: string[];
+    POSITIONS: string[];
+  };
 };

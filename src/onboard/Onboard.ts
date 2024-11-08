@@ -42,20 +42,13 @@ export class Onboard {
                     },
                     value: "wyscout",
                   },
-                  //   {
-                  //     text: {
-                  //       type: "plain_text",
-                  //       text: "Statsbomb",
-                  //     },
-                  //     value: "statsbomb",
-                  //   },
-                  //   {
-                  //     text: {
-                  //       type: "plain_text",
-                  //       text: "Champion",
-                  //     },
-                  //     value: "champion",
-                  //   },
+                  {
+                    text: {
+                      type: "plain_text",
+                      text: "Champion",
+                    },
+                    value: "champion",
+                  },
                 ],
               },
               label: {
@@ -170,7 +163,7 @@ export class Onboard {
               },
               label: {
                 type: "plain_text",
-                text: "Default Competition)",
+                text: "Default Competition",
               },
             },
             {

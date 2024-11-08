@@ -8,18 +8,18 @@ export const generateHandler =
 
       return {
         statusCode: 200,
-        body: JSON.stringify({
-          message: "success",
-        }),
+        body: "",
       };
     } catch (e) {
       console.error(e);
 
       return {
         statusCode: 500,
-        body: JSON.stringify({
-          message: "error",
-        }),
+        body: "",
       };
     }
   };
+
+export const sleep = (ms: number) => {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+};

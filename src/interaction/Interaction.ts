@@ -1,5 +1,6 @@
 import axios from "axios";
 import { SlackOnboardSubmitPayload } from "../types";
+import { sleep } from "../util";
 
 export class Interaction {
   async invoke(input: SlackOnboardSubmitPayload) {
@@ -10,12 +11,20 @@ export class Interaction {
     }
 
     const values = input.payload.view.state.values;
+    const dataProvider =
+      values.data_provider.data_provider_selection.selected_option.value;
+    const competitionScope =
+      values.competition_scope.competition_scope_selection.selected_option
+        .value;
 
-    if (
-      values.data_provider.data_provider_selection.selected_option.value !==
-      "wyscout"
-    ) {
-      throw new Error("Only Wyscout is supported");
+    if (["wyscout", "champion"].some((value) => value === dataProvider)) {
+      throw new Error("wyscout and champion are supported");
+    }
+
+    if (dataProvider === "champion") {
+      if (competitionScope !== "all") {
+        throw new Error("champion only supports all competitions");
+      }
     }
 
     // This may be better replaced with an SQS message for replayability, but for now we make the API request
@@ -25,6 +34,8 @@ export class Interaction {
         "Content-Type": "application/json",
       },
     });
+
+    await sleep(500);
 
     return;
   }

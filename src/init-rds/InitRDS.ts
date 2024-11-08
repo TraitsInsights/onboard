@@ -7,6 +7,16 @@ const rdsData = new AWS.RDSDataService();
 
 export class InitRDS {
   async invoke(input: InitRDSPayload) {
+    const userPoolData = await cognito
+      .describeUserPool({ UserPoolId: input.userPoolId })
+      .promise();
+
+    if (!userPoolData || !userPoolData.UserPool?.Domain) {
+      throw new Error("No user pool found");
+    }
+
+    const domain = userPoolData.UserPool.Domain;
+
     const listUserPoolClientsData = await cognito
       .listUserPoolClients({ UserPoolId: input.userPoolId })
       .promise();
@@ -38,33 +48,33 @@ export class InitRDS {
 
     const appClientSecret = appClientSecretData.UserPoolClient.ClientSecret;
 
-    const params = {
-      secretArn: process.env.RDS_SECRET_ARN!,
-      resourceArn: process.env.RDS_CLUSTER_ARN!,
-      sql: `
+    await rdsData
+      .executeStatement({
+        secretArn: process.env.RDS_SECRET_ARN!,
+        resourceArn: process.env.RDS_CLUSTER_ARN!,
+        sql: `
         INSERT INTO ids (tenant_id, db_id, host, cognito_url, cognito_client_id, cognito_client_secret)
         VALUES (:tenant_id, :db_id, :host, :cognito_url, :cognito_client_id, :cognito_client_secret)
       `,
-      database: process.env.RDS_DATABASE!,
-      parameters: [
-        { name: "tenant_id", value: { stringValue: input.clientId } },
-        { name: "db_id", value: { stringValue: input.clientDbId } },
-        { name: "host", value: { stringValue: input.clientName } },
-        {
-          name: "cognito_url",
-          value: {
-            stringValue: `https://${input.clientName}.auth.eu-west-1.amazoncognito.com`,
+        database: process.env.RDS_DATABASE!,
+        parameters: [
+          { name: "tenant_id", value: { stringValue: input.clientId } },
+          { name: "db_id", value: { stringValue: input.clientDbId } },
+          { name: "host", value: { stringValue: input.clientName } },
+          {
+            name: "cognito_url",
+            value: {
+              stringValue: `https://${domain}.auth.eu-west-1.amazoncognito.com`,
+            },
           },
-        },
-        { name: "cognito_client_id", value: { stringValue: appClientId } },
-        {
-          name: "cognito_client_secret",
-          value: { stringValue: appClientSecret },
-        },
-      ],
-    };
-
-    await rdsData.executeStatement(params).promise();
+          { name: "cognito_client_id", value: { stringValue: appClientId } },
+          {
+            name: "cognito_client_secret",
+            value: { stringValue: appClientSecret },
+          },
+        ],
+      })
+      .promise();
 
     const slackMessage = {
       channel: "onboard",
