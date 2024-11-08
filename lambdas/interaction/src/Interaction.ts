@@ -17,7 +17,7 @@ export class Interaction {
       values.competition_scope.competition_scope_selection.selected_option
         .value;
 
-    if (["wyscout", "champion"].some((value) => value === dataProvider)) {
+    if (!["wyscout", "champion"].some((value) => value === dataProvider)) {
       throw new Error("wyscout and champion are supported");
     }
 
