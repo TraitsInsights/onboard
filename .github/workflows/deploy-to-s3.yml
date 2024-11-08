@@ -1,0 +1,40 @@
+name: Build and Deploy lambdas to S3
+
+on:
+  workflow_dispatch:
+#   push:
+#     branches:
+#       - main
+
+env:
+  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+  AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "18"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Compile TypeScript
+        run: npm run build
+
+      - name: Upload to S3
+        env:
+          S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }}
+        run: |
+          aws s3 cp lambdas/init-rds/dist.zip s3://$S3_BUCKET_NAME/onboard/init-rds.zip
+          aws s3 cp lambdas/init-s3/dist.zip s3://$S3_BUCKET_NAME/onboard/init-s3.zip
+          aws s3 cp lambdas/interaction/dist.zip s3://$S3_BUCKET_NAME/onboard/interaction.zip
+          aws s3 cp lambdas/onboard/dist.zip s3://$S3_BUCKET_NAME/onboard/onboard.zip
