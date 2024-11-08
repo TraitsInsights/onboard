@@ -38,6 +38,8 @@ export class InitS3 {
       values.competition_scope.competition_scope_selection.selected_option
         .value;
 
+    console.log("running RDS");
+
     const rawResponse = await rdsData
       .executeStatement({
         secretArn: process.env.RDS_SECRET_ARN!,
@@ -48,6 +50,8 @@ export class InitS3 {
         formatRecordsAs: "JSON",
       })
       .promise();
+
+    console.log("worked?");
 
     if (!rawResponse.formattedRecords) {
       throw new Error("Could not get max tenant ID from RDS");
