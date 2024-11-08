@@ -1,5 +1,5 @@
 import { APIGatewayProxyEvent } from "aws-lambda";
-import { generateHandler } from "../util";
+import { generateHandler } from "@shared/util";
 import { InitS3 } from "./InitS3";
 
 export const handler = generateHandler(async (event: APIGatewayProxyEvent) => {

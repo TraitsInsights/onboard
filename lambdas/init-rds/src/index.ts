@@ -1,4 +1,4 @@
-import { generateHandler } from "../util";
+import { generateHandler } from "@shared/util";
 import { InitRDS } from "./InitRDS";
 import { APIGatewayProxyEvent } from "aws-lambda";
 
@@ -8,7 +8,7 @@ export const handler = generateHandler(async (event: APIGatewayProxyEvent) => {
   }
 
   if (event.headers["x-api-key"] !== process.env.API_GATEWAY_TOKEN) {
-    throw new Error("Not authorized")
+    throw new Error("Not authorized");
   }
 
   const payload = JSON.parse(event.body);

@@ -1,6 +1,6 @@
 import AWS from "aws-sdk";
 import axios from "axios";
-import { InitRDSPayload } from "../types";
+import { InitRDSPayload } from "@shared/types";
 
 const cognito = new AWS.CognitoIdentityServiceProvider();
 const rdsData = new AWS.RDSDataService();

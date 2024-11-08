@@ -1,6 +1,6 @@
 import axios from "axios";
-import { SlackOnboardSubmitPayload } from "../types";
-import { sleep } from "../util";
+import { SlackOnboardSubmitPayload } from "@shared/types";
+import { sleep } from "@shared/util";
 
 export class Interaction {
   async invoke(input: SlackOnboardSubmitPayload) {

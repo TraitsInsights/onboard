@@ -1,5 +1,5 @@
 import axios from "axios";
-import { SlackOnboardPayload } from "../types";
+import { SlackOnboardPayload } from "@shared/types";
 export class Onboard {
   async invoke(input: SlackOnboardPayload) {
     const { token, trigger_id } = input;

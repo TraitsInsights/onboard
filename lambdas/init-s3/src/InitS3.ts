@@ -1,7 +1,7 @@
 import axios from "axios";
 import AWS from "aws-sdk";
 import fs from "fs";
-import { Config, SlackOnboardSubmitPayload } from "../types";
+import { Config, SlackOnboardSubmitPayload } from "@shared/types";
 import path from "path";
 
 const s3 = new AWS.S3();
@@ -59,7 +59,7 @@ export class InitS3 {
     const clientId = maxClientId + 1;
 
     await this.uploadDirectory(
-      `traits-deployment/s3/${dataProvider}`,
+      `${__dirname}/../../../s3/${dataProvider}`,
       "traits-app",
       `deployments/${clientId}`
     );
@@ -76,11 +76,8 @@ export class InitS3 {
       defaultSeasonOverride
     ) {
       const configFilePath = path.join(
-        "traits-deployment",
-        "s3",
-        dataProvider,
-        "v2",
-        "config.json"
+        __dirname,
+        `../../../s3/${dataProvider}/v2/config.json`
       );
       const configFileContent = fs.readFileSync(configFilePath, "utf-8");
       const config: Config = JSON.parse(configFileContent);
@@ -131,10 +128,8 @@ export class InitS3 {
       .promise();
 
     const weightsFilePath = path.join(
-      "traits-deployment",
-      "s3",
-      dataProvider,
-      "weights.csv"
+      __dirname,
+      `../../../s3/${dataProvider}/weights.csv`
     );
     const weightsFileContent = fs.readFileSync(weightsFilePath);
 

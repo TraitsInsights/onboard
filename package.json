@@ -1,23 +1,11 @@
 {
-  "name": "traits-deployment",
+  "name": "onboard",
   "version": "1.0.0",
-  "description": "data_provider: wyscout|statsbomb|champion competition_scope: all|wyscout-mens|wyscout-womens|wyscout-youth (optional, defaults to all) logo: base 64 encoded image subdomain: string default_team: string (optional) default_competition: string (optional) default_season: string (optional)",
-  "main": "src/handler.ts",
+  "description": "",
+  "main": "",
   "scripts": {
-    "build": "tsc",
-    "clean": "rm -rf dist"
+    "build": "(cd lambdas/init-rds && npm run build) && (cd lambdas/init-s3 && npm run build) && (cd lambdas/interaction && npm run build) && (cd lambdas/onboard && npm run build)"
   },
-  "keywords": [],
   "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "@types/aws-lambda": "^8.10.145",
-    "@types/axios": "^0.14.4",
-    "@types/node": "^22.8.1",
-    "typescript": "^5.6.3"
-  },
-  "dependencies": {
-    "aws-sdk": "^2.1691.0",
-    "axios": "^1.7.7"
-  }
+  "license": "ISC"
 }

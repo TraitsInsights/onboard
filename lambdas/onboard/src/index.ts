@@ -1,5 +1,5 @@
-import { generateHandler } from "../util";
-import { SlackOnboardPayload } from "../types";
+import { generateHandler } from "@shared/util";
+import { SlackOnboardPayload } from "@shared/types";
 import { Onboard } from "./Onboard";
 import { APIGatewayProxyEvent } from "aws-lambda";
 
