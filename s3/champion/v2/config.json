@@ -1,0 +1,63 @@
+{
+    "CUSTOMER": {
+        "DEFAULT_TEAM": "AFC",
+        "DEFAULT_LEAGUE": "AFL",
+        "CURRENT_SEASON": "2024",
+        "EXCLUDE": [
+            "Nationality",
+            "Average Minutes"
+        ]
+    },
+    "TRAITS": {
+        "BALL WINNING": [
+            "STOPPAGE",
+            "CONTEST",
+            "POWER",
+            "RECEIVES"
+        ],
+        "BALL USE": [
+            "HANDBALLING",
+            "KICKING",
+            "GOAL KICKING",
+            "CONNECTING"
+        ],
+        "AERIAL": [
+            "MARKING",
+            "CONTESTED",
+            "MOKS",
+            "RUCK"
+        ],
+        "DEFENCE": [
+            "PRESSURE",
+            "TACKLING",
+            "INTERCEPTING",
+            "NEUTRALISE"
+        ]
+    },
+    "POSITIONS": [
+        "KF",
+        "GF",
+        "M",
+        "W",
+        "R",
+        "GD",
+        "KD"
+    ],
+    "COLORS": {
+        "TRAITS": [
+            "#318fd6",
+            "#EF9B1F",
+            "#48d13f",
+            "#ea4242"
+        ],
+        "POSITIONS": [
+            "Blue",
+            "DodgerBlue",
+            "Gold",
+            "Gold",
+            "GoldenRod",
+            "Tomato",
+            "FireBrick"
+        ]
+    }
+}
