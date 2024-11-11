@@ -4,7 +4,7 @@
   "main": "src/index.ts",
   "scripts": {
     "prebuild": "rm -rf dist",
-    "build": "esbuild src/index.ts --bundle --minify --sourcemap --platform=node --target=es2020 --outfile=dist/lambdas/init-rds/src/index.js",
+    "build": "esbuild src/index.ts --bundle --minify --platform=node --target=es2020 --outfile=dist/lambdas/init-rds/src/index.js",
     "postbuild": "cp -r ../../s3 dist && zip -r dist.zip dist*"
   },
   "author": "",
