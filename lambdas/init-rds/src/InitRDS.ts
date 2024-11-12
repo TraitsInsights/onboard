@@ -78,7 +78,7 @@ export class InitRDS {
 
     const slackMessage = {
       channel: "onboard",
-      text: `🎉 *Client Onboarded!* 🎉\n\n*Name:* ${input.clientName}\n*ID:* ${input.clientId}\n*URL:* ${input.clientName}.traitsinsights.app`,
+      text: `🎉 *Client Onboarded!* 🎉\n\n*Name:* ${input.clientName}\n*ID:* ${input.clientId}\n*URL:* ${input.clientName}.traitsinsights.app\n\nYou can add a new user here: https://eu-west-1.console.aws.amazon.com/cognito/v2/idp/user-pools/${input.userPoolId}/users/create/user?region=eu-west-1`,
     };
 
     await axios.post("https://slack.com/api/chat.postMessage", slackMessage, {

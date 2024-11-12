@@ -146,7 +146,7 @@ export class InitS3 {
     await axios.post(
       workflowDispatchUrl,
       {
-        ref: "feat/1894930982-cloud-onboarding", // TODO: change to main
+        ref: "main",
         inputs: {
           clientName: values.subdomain.subdomain_input.value,
           clientId: String(clientId),
