@@ -4,6 +4,7 @@
   "description": "",
   "main": "",
   "scripts": {
+    "install": "(cd lambdas/init-rds && npm install) && (cd lambdas/init-s3 && npm install) && (cd lambdas/interaction && npm install) && (cd lambdas/onboard && npm install)",
     "build": "(cd lambdas/init-rds && npm run build) && (cd lambdas/init-s3 && npm run build) && (cd lambdas/interaction && npm run build) && (cd lambdas/onboard && npm run build)"
   },
   "author": "",
