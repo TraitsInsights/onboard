@@ -77,21 +77,21 @@ export class Onboard {
                   {
                     text: {
                       type: "plain_text",
-                      text: "Wyscout Mens",
+                      text: "Wyscout Mens and Youth Leagues",
                     },
-                    value: "wyscout-mens",
+                    value: "wyscout-mens-youth",
                   },
                   {
                     text: {
                       type: "plain_text",
-                      text: "Wyscout Womens",
+                      text: "Wyscout Womens Leagues",
                     },
                     value: "wyscout-womens",
                   },
                   {
                     text: {
                       type: "plain_text",
-                      text: "Wyscout Youth",
+                      text: "Wyscout Youth Leagues",
                     },
                     value: "wyscout-youth",
                   },
@@ -100,20 +100,6 @@ export class Onboard {
               label: {
                 type: "plain_text",
                 text: "Competition Scope",
-              },
-            },
-            {
-              type: "input",
-              block_id: "logo",
-              label: {
-                type: "plain_text",
-                text: "Upload logo",
-              },
-              element: {
-                type: "file_input",
-                action_id: "logo_upload",
-                filetypes: ["png"],
-                max_files: 1,
               },
             },
             {
@@ -130,6 +116,20 @@ export class Onboard {
               label: {
                 type: "plain_text",
                 text: "Subdomain",
+              },
+            },
+            {
+              type: "input",
+              block_id: "logo",
+              label: {
+                type: "plain_text",
+                text: "Upload logo",
+              },
+              element: {
+                type: "file_input",
+                action_id: "logo_upload",
+                filetypes: ["png"],
+                max_files: 1,
               },
             },
             {

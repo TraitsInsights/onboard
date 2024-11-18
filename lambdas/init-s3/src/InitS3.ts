@@ -9,10 +9,10 @@ const rdsData = new AWS.RDSDataService();
 
 const dbMappings = {
   wyscout: {
-    all: 99,
+    all: 100,
     "wyscout-womens": 32,
     "wyscout-youth": 75,
-    "wyscout-mens": 99,
+    "wyscout-mens-youth": 99,
   },
   champion: {
     all: 3,
