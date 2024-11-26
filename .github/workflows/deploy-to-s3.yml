@@ -40,3 +40,14 @@ jobs:
           aws s3 cp lambdas/init-s3/dist.zip s3://$S3_BUCKET_NAME/onboard/init-s3.zip
           aws s3 cp lambdas/interaction/dist.zip s3://$S3_BUCKET_NAME/onboard/interaction.zip
           aws s3 cp lambdas/onboard/dist.zip s3://$S3_BUCKET_NAME/onboard/onboard.zip
+
+      - name: Trigger infrastructure apply workflow
+        env:
+          INFRASTRUCTURE_REPOSITORY_NAME: ${{ vars.INFRASTRUCTURE_REPOSITORY_NAME }}
+          INFRASTRUCTURE_WORKFLOW_ID: ${{ vars.INFRASTRUCTURE_PRODUCTION_WORKFLOW_ID }}
+          WORKFLOW_TOKEN: ${{ secrets.WORKFLOW_TOKEN }}
+        run: |
+          curl -X POST https://api.github.com/repos/$INFRASTRUCTURE_REPOSITORY_NAME/actions/workflows/$INFRASTRUCTURE_WORKFLOW_ID/dispatches \
+            -H "Authorization: Bearer $WORKFLOW_TOKEN" \
+            -H "Content-Type: application/json" \
+            --data '{"ref": "main"}'

@@ -1,11 +1,13 @@
 import axios from "axios";
-import AWS from "aws-sdk";
+import { RDSData } from "@aws-sdk/client-rds-data";
+import { Upload } from "@aws-sdk/lib-storage";
+import { S3 } from "@aws-sdk/client-s3";
 import fs from "fs";
 import { Config, SlackOnboardSubmitPayload } from "@shared/types";
 import path from "path";
 
-const s3 = new AWS.S3();
-const rdsData = new AWS.RDSDataService();
+const s3 = new S3();
+const rdsData = new RDSData();
 
 const dbMappings = {
   wyscout: {
@@ -38,16 +40,13 @@ export class InitS3 {
       values.competition_scope.competition_scope_selection.selected_option
         .value;
 
-    const rawResponse = await rdsData
-      .executeStatement({
-        secretArn: process.env.RDS_SECRET_ARN!,
-        resourceArn: process.env.RDS_CLUSTER_ARN!,
-        sql: `SELECT MAX(tenant_id) as tenant_id FROM traitsproddb.ids;`,
-        database: process.env.RDS_DATABASE!,
-        parameters: [],
-        formatRecordsAs: "JSON",
-      })
-      .promise();
+    const rawResponse = await rdsData.executeStatement({
+      secretArn: process.env.RDS_SECRET_ARN!,
+      resourceArn: process.env.RDS_CLUSTER_ARN!,
+      sql: `SELECT MAX(tenant_id) as tenant_id FROM traitsproddb.ids;`,
+      parameters: [],
+      formatRecordsAs: "JSON",
+    });
 
     if (!rawResponse.formattedRecords) {
       throw new Error("Could not get max tenant ID from RDS");
@@ -98,14 +97,16 @@ export class InitS3 {
         },
       };
 
-      await s3
-        .upload({
+      await new Upload({
+        client: s3,
+
+        params: {
           Bucket: "traits-app",
           Key: `deployments/${clientId}/v2/config.json`,
           Body: JSON.stringify(updatedConfig, null, 2),
           ContentType: "application/json",
-        })
-        .promise();
+        },
+      }).done();
     }
 
     const logoResponse = await axios.get(
@@ -118,14 +119,16 @@ export class InitS3 {
       }
     );
 
-    await s3
-      .upload({
+    await new Upload({
+      client: s3,
+
+      params: {
         Bucket: "traits-app",
         Key: `deployments/${clientId}/assets/club_image.png`,
         Body: logoResponse.data,
         ContentType: "image/png",
-      })
-      .promise();
+      },
+    }).done();
 
     const weightsFilePath = path.join(
       __dirname,
@@ -133,14 +136,16 @@ export class InitS3 {
     );
     const weightsFileContent = fs.readFileSync(weightsFilePath);
 
-    await s3
-      .upload({
+    await new Upload({
+      client: s3,
+
+      params: {
         Bucket: "traits-app",
         Key: `settings/weights/${clientId}.csv`,
         Body: weightsFileContent,
         ContentType: "text/csv",
-      })
-      .promise();
+      },
+    }).done();
 
     const workflowDispatchUrl = `https://api.github.com/repos/${process.env.GITHUB_REPOSITORY}/actions/workflows/${process.env.GITHUB_ACTIONS_WORKFLOW_ID}/dispatches`;
     await axios.post(
@@ -173,13 +178,15 @@ export class InitS3 {
         await this.uploadDirectory(filePath, bucket, fileKey);
       } else {
         const fileContent = fs.readFileSync(filePath);
-        await s3
-          .upload({
+        await new Upload({
+          client: s3,
+
+          params: {
             Bucket: bucket,
             Key: fileKey,
             Body: fileContent,
-          })
-          .promise();
+          },
+        }).done();
       }
     }
   }

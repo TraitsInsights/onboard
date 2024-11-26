@@ -1,15 +1,16 @@
-import AWS from "aws-sdk";
+import { CognitoIdentityProvider } from "@aws-sdk/client-cognito-identity-provider";
+import { RDSData } from "@aws-sdk/client-rds-data";
 import axios from "axios";
 import { InitRDSPayload } from "@shared/types";
 
-const cognito = new AWS.CognitoIdentityServiceProvider();
-const rdsData = new AWS.RDSDataService();
+const cognito = new CognitoIdentityProvider();
+const rdsData = new RDSData();
 
 export class InitRDS {
   async invoke(input: InitRDSPayload) {
-    const userPoolData = await cognito
-      .describeUserPool({ UserPoolId: input.userPoolId })
-      .promise();
+    const userPoolData = await cognito.describeUserPool({
+      UserPoolId: input.userPoolId,
+    });
 
     if (!userPoolData || !userPoolData.UserPool?.Domain) {
       throw new Error("No user pool found");
@@ -17,9 +18,9 @@ export class InitRDS {
 
     const domain = userPoolData.UserPool.Domain;
 
-    const listUserPoolClientsData = await cognito
-      .listUserPoolClients({ UserPoolId: input.userPoolId })
-      .promise();
+    const listUserPoolClientsData = await cognito.listUserPoolClients({
+      UserPoolId: input.userPoolId,
+    });
 
     if (
       !listUserPoolClientsData ||
@@ -35,12 +36,10 @@ export class InitRDS {
       throw new Error("No app client ID found");
     }
 
-    const appClientSecretData = await cognito
-      .describeUserPoolClient({
-        UserPoolId: input.userPoolId,
-        ClientId: appClientId,
-      })
-      .promise();
+    const appClientSecretData = await cognito.describeUserPoolClient({
+      UserPoolId: input.userPoolId,
+      ClientId: appClientId,
+    });
 
     if (!appClientSecretData || !appClientSecretData.UserPoolClient) {
       throw new Error("No app client secret found");
@@ -48,33 +47,34 @@ export class InitRDS {
 
     const appClientSecret = appClientSecretData.UserPoolClient.ClientSecret;
 
-    await rdsData
-      .executeStatement({
-        secretArn: process.env.RDS_SECRET_ARN!,
-        resourceArn: process.env.RDS_CLUSTER_ARN!,
-        sql: `
-        INSERT INTO ids (tenant_id, db_id, host, cognito_url, cognito_client_id, cognito_client_secret)
+    if (!appClientSecret) {
+      throw new Error("No app client secret found");
+    }
+
+    await rdsData.executeStatement({
+      secretArn: process.env.RDS_SECRET_ARN!,
+      resourceArn: process.env.RDS_CLUSTER_ARN!,
+      sql: `
+        INSERT INTO traitsproddb.ids (tenant_id, db_id, host, cognito_url, cognito_client_id, cognito_client_secret)
         VALUES (:tenant_id, :db_id, :host, :cognito_url, :cognito_client_id, :cognito_client_secret)
       `,
-        database: process.env.RDS_DATABASE!,
-        parameters: [
-          { name: "tenant_id", value: { stringValue: input.clientId } },
-          { name: "db_id", value: { stringValue: input.clientDbId } },
-          { name: "host", value: { stringValue: input.clientName } },
-          {
-            name: "cognito_url",
-            value: {
-              stringValue: `https://${domain}.auth.eu-west-1.amazoncognito.com`,
-            },
+      parameters: [
+        { name: "tenant_id", value: { stringValue: input.clientId } },
+        { name: "db_id", value: { stringValue: input.clientDbId } },
+        { name: "host", value: { stringValue: input.clientName } },
+        {
+          name: "cognito_url",
+          value: {
+            stringValue: `https://${domain}.auth.eu-west-1.amazoncognito.com`,
           },
-          { name: "cognito_client_id", value: { stringValue: appClientId } },
-          {
-            name: "cognito_client_secret",
-            value: { stringValue: appClientSecret },
-          },
-        ],
-      })
-      .promise();
+        },
+        { name: "cognito_client_id", value: { stringValue: appClientId } },
+        {
+          name: "cognito_client_secret",
+          value: { stringValue: appClientSecret },
+        },
+      ],
+    });
 
     const slackMessage = {
       channel: "onboard",
