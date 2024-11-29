@@ -1,8 +1,13 @@
 import { APIGatewayProxyEvent, APIGatewayProxyResult } from "aws-lambda";
 
+export type SubsetApiGatewayProxyEvent = Pick<
+  APIGatewayProxyEvent,
+  "headers" | "body"
+>;
+
 export const generateHandler =
-  (func: (event: APIGatewayProxyEvent) => Promise<any>) =>
-  async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
+  (func: (event: SubsetApiGatewayProxyEvent) => Promise<any>) =>
+  async (event: SubsetApiGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
     try {
       await func(event);
 

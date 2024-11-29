@@ -1,10 +1,16 @@
 import { CognitoIdentityProvider } from "@aws-sdk/client-cognito-identity-provider";
 import { RDSData } from "@aws-sdk/client-rds-data";
+import {
+  CloudWatchClient,
+  GetDashboardCommand,
+  PutDashboardCommand,
+} from "@aws-sdk/client-cloudwatch";
 import axios from "axios";
 import { InitRDSPayload } from "@shared/types";
 
 const cognito = new CognitoIdentityProvider();
 const rdsData = new RDSData();
+const cloudwatch = new CloudWatchClient();
 
 export class InitRDS {
   async invoke(input: InitRDSPayload) {
@@ -87,5 +93,47 @@ export class InitRDS {
         "Content-Type": "application/json",
       },
     });
+
+    const getDashboardCommand = new GetDashboardCommand({
+      DashboardName: "production-usage",
+    });
+    const getDashboardResponse = await cloudwatch.send(getDashboardCommand);
+
+    if (getDashboardResponse.DashboardBody) {
+      const dashboardBody = JSON.parse(getDashboardResponse.DashboardBody);
+
+      const tenantVariableIndex = dashboardBody.variables.findIndex(
+        (variable: any) => variable.id === "tenant"
+      );
+
+      const tenantValues =
+        tenantVariableIndex > -1
+          ? dashboardBody.variables[tenantVariableIndex].values
+          : [];
+
+      const updatedTenantValues = [
+        { value: `client_id = ${input.clientId}`, label: input.clientName },
+        ...tenantValues,
+      ];
+
+      const updatedDashboardBody = {
+        ...dashboardBody,
+        variables: [
+          ...dashboardBody.variables.slice(0, tenantVariableIndex),
+          {
+            ...dashboardBody.variables[tenantVariableIndex],
+            values: updatedTenantValues,
+          },
+          ...dashboardBody.variables.slice(tenantVariableIndex + 1),
+        ],
+      };
+
+      const updatedDashboardCommand = new PutDashboardCommand({
+        DashboardName: "production-usage",
+        DashboardBody: JSON.stringify(updatedDashboardBody),
+      });
+
+      await cloudwatch.send(updatedDashboardCommand);
+    }
   }
 }
