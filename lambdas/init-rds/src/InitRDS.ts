@@ -61,8 +61,8 @@ export class InitRDS {
       secretArn: process.env.RDS_SECRET_ARN!,
       resourceArn: process.env.RDS_CLUSTER_ARN!,
       sql: `
-        INSERT INTO traitsproddb.ids (tenant_id, db_id, host, cognito_url, cognito_client_id, cognito_client_secret)
-        VALUES (:tenant_id, :db_id, :host, :cognito_url, :cognito_client_id, :cognito_client_secret)
+        INSERT INTO traitsproddb.ids (tenant_id, db_id, host, cognito_url, cognito_client_id, cognito_client_secret, cognito_user_pool_id)
+        VALUES (:tenant_id, :db_id, :host, :cognito_url, :cognito_client_id, :cognito_client_secret, :cognito_user_pool_id)
       `,
       parameters: [
         { name: "tenant_id", value: { stringValue: input.clientId } },
@@ -78,6 +78,10 @@ export class InitRDS {
         {
           name: "cognito_client_secret",
           value: { stringValue: appClientSecret },
+        },
+        {
+          name: "cognito_user_pool_id",
+          value: { stringValue: input.userPoolId },
         },
       ],
     });
