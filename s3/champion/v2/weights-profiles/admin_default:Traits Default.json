@@ -1,674 +1,786 @@
 [
     {
-        "POS": "CF",
-        "Trait": "SCORING",
-        "%RTG": 48,
-        "Metric": "Goalscoring",
-        "%TRAIT": 45
-    },
-    {
-        "POS": "CF",
-        "Trait": "SCORING",
-        "%RTG": 48,
-        "Metric": "Shooting",
-        "%TRAIT": 19
-    },
-    {
-        "POS": "CF",
-        "Trait": "SCORING",
-        "%RTG": 48,
-        "Metric": "Conversion",
-        "%TRAIT": 21
-    },
-    {
-        "POS": "CF",
-        "Trait": "SCORING",
-        "%RTG": 48,
-        "Metric": "Positioning",
-        "%TRAIT": 15
-    },
-    {
-        "POS": "CF",
-        "Trait": "CREATING",
+        "POS": "KF",
+        "Trait": "BALL WINNING",
         "%RTG": 25,
-        "Metric": "Assists",
-        "%TRAIT": 33
-    },
-    {
-        "POS": "CF",
-        "Trait": "CREATING",
-        "%RTG": 25,
-        "Metric": "Crossing",
-        "%TRAIT": 27
-    },
-    {
-        "POS": "CF",
-        "Trait": "CREATING",
-        "%RTG": 25,
-        "Metric": "Dribbling",
-        "%TRAIT": 26
-    },
-    {
-        "POS": "CF",
-        "Trait": "CREATING",
-        "%RTG": 25,
-        "Metric": "Comb Play",
-        "%TRAIT": 14
-    },
-    {
-        "POS": "CF",
-        "Trait": "PASSING",
-        "%RTG": 15,
-        "Metric": "Involvement",
-        "%TRAIT": 32
-    },
-    {
-        "POS": "CF",
-        "Trait": "PASSING",
-        "%RTG": 15,
-        "Metric": "Accuracy",
-        "%TRAIT": 26
-    },
-    {
-        "POS": "CF",
-        "Trait": "PASSING",
-        "%RTG": 15,
-        "Metric": "Direction",
-        "%TRAIT": 13
-    },
-    {
-        "POS": "CF",
-        "Trait": "PASSING",
-        "%RTG": 15,
-        "Metric": "Intent",
-        "%TRAIT": 29
-    },
-    {
-        "POS": "CF",
-        "Trait": "DEFENDING",
-        "%RTG": 12,
-        "Metric": "Aerial",
-        "%TRAIT": 58
-    },
-    {
-        "POS": "CF",
-        "Trait": "DEFENDING",
-        "%RTG": 12,
-        "Metric": "On Ball",
-        "%TRAIT": 28
-    },
-    {
-        "POS": "CF",
-        "Trait": "DEFENDING",
-        "%RTG": 12,
-        "Metric": "Off Ball",
-        "%TRAIT": 12
-    },
-    {
-        "POS": "CF",
-        "Trait": "DEFENDING",
-        "%RTG": 12,
-        "Metric": "Fouls",
-        "%TRAIT": 2
-    },
-    {
-        "POS": "AM",
-        "Trait": "SCORING",
-        "%RTG": 26,
-        "Metric": "Goalscoring",
-        "%TRAIT": 40
-    },
-    {
-        "POS": "AM",
-        "Trait": "SCORING",
-        "%RTG": 26,
-        "Metric": "Shooting",
-        "%TRAIT": 31
-    },
-    {
-        "POS": "AM",
-        "Trait": "SCORING",
-        "%RTG": 26,
-        "Metric": "Conversion",
-        "%TRAIT": 15
-    },
-    {
-        "POS": "AM",
-        "Trait": "SCORING",
-        "%RTG": 26,
-        "Metric": "Positioning",
-        "%TRAIT": 14
-    },
-    {
-        "POS": "AM",
-        "Trait": "CREATING",
-        "%RTG": 42,
-        "Metric": "Assists",
-        "%TRAIT": 45
-    },
-    {
-        "POS": "AM",
-        "Trait": "CREATING",
-        "%RTG": 42,
-        "Metric": "Crossing",
-        "%TRAIT": 22
-    },
-    {
-        "POS": "AM",
-        "Trait": "CREATING",
-        "%RTG": 42,
-        "Metric": "Dribbling",
-        "%TRAIT": 17
-    },
-    {
-        "POS": "AM",
-        "Trait": "CREATING",
-        "%RTG": 42,
-        "Metric": "Comb Play",
-        "%TRAIT": 16
-    },
-    {
-        "POS": "AM",
-        "Trait": "PASSING",
-        "%RTG": 18,
-        "Metric": "Involvement",
-        "%TRAIT": 14
-    },
-    {
-        "POS": "AM",
-        "Trait": "PASSING",
-        "%RTG": 18,
-        "Metric": "Accuracy",
+        "Metric": "STOPPAGE",
         "%TRAIT": 25
     },
     {
-        "POS": "AM",
-        "Trait": "PASSING",
-        "%RTG": 18,
-        "Metric": "Direction",
-        "%TRAIT": 30
-    },
-    {
-        "POS": "AM",
-        "Trait": "PASSING",
-        "%RTG": 18,
-        "Metric": "Intent",
-        "%TRAIT": 31
-    },
-    {
-        "POS": "AM",
-        "Trait": "DEFENDING",
-        "%RTG": 14,
-        "Metric": "Aerial",
-        "%TRAIT": 12
-    },
-    {
-        "POS": "AM",
-        "Trait": "DEFENDING",
-        "%RTG": 14,
-        "Metric": "On Ball",
-        "%TRAIT": 27
-    },
-    {
-        "POS": "AM",
-        "Trait": "DEFENDING",
-        "%RTG": 14,
-        "Metric": "Off Ball",
-        "%TRAIT": 44
-    },
-    {
-        "POS": "AM",
-        "Trait": "DEFENDING",
-        "%RTG": 14,
-        "Metric": "Fouls",
-        "%TRAIT": 17
-    },
-    {
-        "POS": "M",
-        "Trait": "SCORING",
-        "%RTG": 20,
-        "Metric": "Goalscoring",
-        "%TRAIT": 37
-    },
-    {
-        "POS": "M",
-        "Trait": "SCORING",
-        "%RTG": 20,
-        "Metric": "Shooting",
-        "%TRAIT": 32
-    },
-    {
-        "POS": "M",
-        "Trait": "SCORING",
-        "%RTG": 20,
-        "Metric": "Conversion",
-        "%TRAIT": 19
-    },
-    {
-        "POS": "M",
-        "Trait": "SCORING",
-        "%RTG": 20,
-        "Metric": "Positioning",
-        "%TRAIT": 12
-    },
-    {
-        "POS": "M",
-        "Trait": "CREATING",
+        "POS": "KF",
+        "Trait": "BALL WINNING",
         "%RTG": 25,
-        "Metric": "Assists",
-        "%TRAIT": 42
+        "Metric": "CONTEST",
+        "%TRAIT": 35
     },
     {
-        "POS": "M",
-        "Trait": "CREATING",
+        "POS": "KF",
+        "Trait": "BALL WINNING",
         "%RTG": 25,
-        "Metric": "Crossing",
-        "%TRAIT": 28
-    },
-    {
-        "POS": "M",
-        "Trait": "CREATING",
-        "%RTG": 25,
-        "Metric": "Dribbling",
-        "%TRAIT": 17
-    },
-    {
-        "POS": "M",
-        "Trait": "CREATING",
-        "%RTG": 25,
-        "Metric": "Comb Play",
-        "%TRAIT": 13
-    },
-    {
-        "POS": "M",
-        "Trait": "PASSING",
-        "%RTG": 35,
-        "Metric": "Involvement",
-        "%TRAIT": 53
-    },
-    {
-        "POS": "M",
-        "Trait": "PASSING",
-        "%RTG": 35,
-        "Metric": "Accuracy",
-        "%TRAIT": 24
-    },
-    {
-        "POS": "M",
-        "Trait": "PASSING",
-        "%RTG": 35,
-        "Metric": "Direction",
-        "%TRAIT": 12
-    },
-    {
-        "POS": "M",
-        "Trait": "PASSING",
-        "%RTG": 35,
-        "Metric": "Intent",
-        "%TRAIT": 11
-    },
-    {
-        "POS": "M",
-        "Trait": "DEFENDING",
-        "%RTG": 20,
-        "Metric": "Aerial",
-        "%TRAIT": 17
-    },
-    {
-        "POS": "M",
-        "Trait": "DEFENDING",
-        "%RTG": 20,
-        "Metric": "On Ball",
-        "%TRAIT": 31
-    },
-    {
-        "POS": "M",
-        "Trait": "DEFENDING",
-        "%RTG": 20,
-        "Metric": "Off Ball",
-        "%TRAIT": 29
-    },
-    {
-        "POS": "M",
-        "Trait": "DEFENDING",
-        "%RTG": 20,
-        "Metric": "Fouls",
-        "%TRAIT": 23
-    },
-    {
-        "POS": "DM",
-        "Trait": "SCORING",
-        "%RTG": 15,
-        "Metric": "Goalscoring",
-        "%TRAIT": 40
-    },
-    {
-        "POS": "DM",
-        "Trait": "SCORING",
-        "%RTG": 15,
-        "Metric": "Shooting",
-        "%TRAIT": 33
-    },
-    {
-        "POS": "DM",
-        "Trait": "SCORING",
-        "%RTG": 15,
-        "Metric": "Conversion",
-        "%TRAIT": 17
-    },
-    {
-        "POS": "DM",
-        "Trait": "SCORING",
-        "%RTG": 15,
-        "Metric": "Positioning",
-        "%TRAIT": 10
-    },
-    {
-        "POS": "DM",
-        "Trait": "CREATING",
-        "%RTG": 24,
-        "Metric": "Assists",
-        "%TRAIT": 53
-    },
-    {
-        "POS": "DM",
-        "Trait": "CREATING",
-        "%RTG": 24,
-        "Metric": "Crossing",
-        "%TRAIT": 19
-    },
-    {
-        "POS": "DM",
-        "Trait": "CREATING",
-        "%RTG": 24,
-        "Metric": "Dribbling",
-        "%TRAIT": 14
-    },
-    {
-        "POS": "DM",
-        "Trait": "CREATING",
-        "%RTG": 24,
-        "Metric": "Comb Play",
-        "%TRAIT": 14
-    },
-    {
-        "POS": "DM",
-        "Trait": "PASSING",
-        "%RTG": 33,
-        "Metric": "Involvement",
-        "%TRAIT": 18
-    },
-    {
-        "POS": "DM",
-        "Trait": "PASSING",
-        "%RTG": 33,
-        "Metric": "Accuracy",
-        "%TRAIT": 42
-    },
-    {
-        "POS": "DM",
-        "Trait": "PASSING",
-        "%RTG": 33,
-        "Metric": "Direction",
-        "%TRAIT": 16
-    },
-    {
-        "POS": "DM",
-        "Trait": "PASSING",
-        "%RTG": 33,
-        "Metric": "Intent",
-        "%TRAIT": 24
-    },
-    {
-        "POS": "DM",
-        "Trait": "DEFENDING",
-        "%RTG": 28,
-        "Metric": "Aerial",
-        "%TRAIT": 44
-    },
-    {
-        "POS": "DM",
-        "Trait": "DEFENDING",
-        "%RTG": 28,
-        "Metric": "On Ball",
-        "%TRAIT": 34
-    },
-    {
-        "POS": "DM",
-        "Trait": "DEFENDING",
-        "%RTG": 28,
-        "Metric": "Off Ball",
-        "%TRAIT": 10
-    },
-    {
-        "POS": "DM",
-        "Trait": "DEFENDING",
-        "%RTG": 28,
-        "Metric": "Fouls",
-        "%TRAIT": 12
-    },
-    {
-        "POS": "FB",
-        "Trait": "SCORING",
-        "%RTG": 12,
-        "Metric": "Goalscoring",
-        "%TRAIT": 36
-    },
-    {
-        "POS": "FB",
-        "Trait": "SCORING",
-        "%RTG": 12,
-        "Metric": "Shooting",
-        "%TRAIT": 26
-    },
-    {
-        "POS": "FB",
-        "Trait": "SCORING",
-        "%RTG": 12,
-        "Metric": "Conversion",
-        "%TRAIT": 20
-    },
-    {
-        "POS": "FB",
-        "Trait": "SCORING",
-        "%RTG": 12,
-        "Metric": "Positioning",
-        "%TRAIT": 18
-    },
-    {
-        "POS": "FB",
-        "Trait": "CREATING",
-        "%RTG": 30,
-        "Metric": "Assists",
-        "%TRAIT": 30
-    },
-    {
-        "POS": "FB",
-        "Trait": "CREATING",
-        "%RTG": 30,
-        "Metric": "Crossing",
-        "%TRAIT": 29
-    },
-    {
-        "POS": "FB",
-        "Trait": "CREATING",
-        "%RTG": 30,
-        "Metric": "Dribbling",
-        "%TRAIT": 26
-    },
-    {
-        "POS": "FB",
-        "Trait": "CREATING",
-        "%RTG": 30,
-        "Metric": "Comb Play",
+        "Metric": "POWER",
         "%TRAIT": 15
     },
     {
-        "POS": "FB",
-        "Trait": "PASSING",
-        "%RTG": 24,
-        "Metric": "Involvement",
-        "%TRAIT": 30
+        "POS": "KF",
+        "Trait": "BALL WINNING",
+        "%RTG": 25,
+        "Metric": "RECEIVES",
+        "%TRAIT": 25
     },
     {
-        "POS": "FB",
-        "Trait": "PASSING",
-        "%RTG": 24,
-        "Metric": "Accuracy",
-        "%TRAIT": 22
-    },
-    {
-        "POS": "FB",
-        "Trait": "PASSING",
-        "%RTG": 24,
-        "Metric": "Direction",
-        "%TRAIT": 18
-    },
-    {
-        "POS": "FB",
-        "Trait": "PASSING",
-        "%RTG": 24,
-        "Metric": "Intent",
-        "%TRAIT": 30
-    },
-    {
-        "POS": "FB",
-        "Trait": "DEFENDING",
-        "%RTG": 34,
-        "Metric": "Aerial",
-        "%TRAIT": 6
-    },
-    {
-        "POS": "FB",
-        "Trait": "DEFENDING",
-        "%RTG": 34,
-        "Metric": "On Ball",
-        "%TRAIT": 43
-    },
-    {
-        "POS": "FB",
-        "Trait": "DEFENDING",
-        "%RTG": 34,
-        "Metric": "Off Ball",
-        "%TRAIT": 42
-    },
-    {
-        "POS": "FB",
-        "Trait": "DEFENDING",
-        "%RTG": 34,
-        "Metric": "Fouls",
-        "%TRAIT": 9
-    },
-    {
-        "POS": "CB",
-        "Trait": "SCORING",
-        "%RTG": 8,
-        "Metric": "Goalscoring",
-        "%TRAIT": 44
-    },
-    {
-        "POS": "CB",
-        "Trait": "SCORING",
-        "%RTG": 8,
-        "Metric": "Shooting",
-        "%TRAIT": 32
-    },
-    {
-        "POS": "CB",
-        "Trait": "SCORING",
-        "%RTG": 8,
-        "Metric": "Conversion",
-        "%TRAIT": 13
-    },
-    {
-        "POS": "CB",
-        "Trait": "SCORING",
-        "%RTG": 8,
-        "Metric": "Positioning",
-        "%TRAIT": 11
-    },
-    {
-        "POS": "CB",
-        "Trait": "CREATING",
-        "%RTG": 26,
-        "Metric": "Assists",
-        "%TRAIT": 51
-    },
-    {
-        "POS": "CB",
-        "Trait": "CREATING",
-        "%RTG": 26,
-        "Metric": "Crossing",
-        "%TRAIT": 22
-    },
-    {
-        "POS": "CB",
-        "Trait": "CREATING",
-        "%RTG": 26,
-        "Metric": "Dribbling",
-        "%TRAIT": 17
-    },
-    {
-        "POS": "CB",
-        "Trait": "CREATING",
-        "%RTG": 26,
-        "Metric": "Comb Play",
+        "POS": "KF",
+        "Trait": "BALL USE",
+        "%RTG": 35,
+        "Metric": "HANDBALLING",
         "%TRAIT": 10
     },
     {
-        "POS": "CB",
-        "Trait": "PASSING",
-        "%RTG": 24,
-        "Metric": "Involvement",
-        "%TRAIT": 45
+        "POS": "KF",
+        "Trait": "BALL USE",
+        "%RTG": 35,
+        "Metric": "KICKING",
+        "%TRAIT": 25
     },
     {
-        "POS": "CB",
-        "Trait": "PASSING",
-        "%RTG": 24,
-        "Metric": "Accuracy",
-        "%TRAIT": 22
+        "POS": "KF",
+        "Trait": "BALL USE",
+        "%RTG": 35,
+        "Metric": "GOAL KICKING",
+        "%TRAIT": 50
     },
     {
-        "POS": "CB",
-        "Trait": "PASSING",
-        "%RTG": 24,
-        "Metric": "Direction",
-        "%TRAIT": 19
+        "POS": "KF",
+        "Trait": "BALL USE",
+        "%RTG": 35,
+        "Metric": "CONNECTING",
+        "%TRAIT": 15
     },
     {
-        "POS": "CB",
-        "Trait": "PASSING",
-        "%RTG": 24,
-        "Metric": "Intent",
-        "%TRAIT": 14
+        "POS": "KF",
+        "Trait": "AERIAL",
+        "%RTG": 30,
+        "Metric": "MARKING",
+        "%TRAIT": 25
     },
     {
-        "POS": "CB",
-        "Trait": "DEFENDING",
-        "%RTG": 42,
-        "Metric": "Aerial",
-        "%TRAIT": 27
+        "POS": "KF",
+        "Trait": "AERIAL",
+        "%RTG": 30,
+        "Metric": "CONTESTED",
+        "%TRAIT": 35
     },
     {
-        "POS": "CB",
-        "Trait": "DEFENDING",
-        "%RTG": 42,
-        "Metric": "On Ball",
+        "POS": "KF",
+        "Trait": "AERIAL",
+        "%RTG": 30,
+        "Metric": "MOKS",
+        "%TRAIT": 15
+    },
+    {
+        "POS": "KF",
+        "Trait": "AERIAL",
+        "%RTG": 30,
+        "Metric": "RUCK",
+        "%TRAIT": 25
+    },
+    {
+        "POS": "KF",
+        "Trait": "DEFENCE",
+        "%RTG": 10,
+        "Metric": "PRESSURE",
         "%TRAIT": 30
     },
     {
-        "POS": "CB",
-        "Trait": "DEFENDING",
-        "%RTG": 42,
-        "Metric": "Off Ball",
-        "%TRAIT": 39
+        "POS": "KF",
+        "Trait": "DEFENCE",
+        "%RTG": 10,
+        "Metric": "TACKLING",
+        "%TRAIT": 35
     },
     {
-        "POS": "CB",
-        "Trait": "DEFENDING",
-        "%RTG": 42,
-        "Metric": "Fouls",
-        "%TRAIT": 4
+        "POS": "KF",
+        "Trait": "DEFENCE",
+        "%RTG": 10,
+        "Metric": "INTERCEPTING",
+        "%TRAIT": 15
+    },
+    {
+        "POS": "KF",
+        "Trait": "DEFENCE",
+        "%RTG": 10,
+        "Metric": "NEUTRALISE",
+        "%TRAIT": 20
+    },
+    {
+        "POS": "GF",
+        "Trait": "BALL WINNING",
+        "%RTG": 30,
+        "Metric": "STOPPAGE",
+        "%TRAIT": 20
+    },
+    {
+        "POS": "GF",
+        "Trait": "BALL WINNING",
+        "%RTG": 30,
+        "Metric": "CONTEST",
+        "%TRAIT": 30
+    },
+    {
+        "POS": "GF",
+        "Trait": "BALL WINNING",
+        "%RTG": 30,
+        "Metric": "POWER",
+        "%TRAIT": 10
+    },
+    {
+        "POS": "GF",
+        "Trait": "BALL WINNING",
+        "%RTG": 30,
+        "Metric": "RECEIVES",
+        "%TRAIT": 40
+    },
+    {
+        "POS": "GF",
+        "Trait": "BALL USE",
+        "%RTG": 35,
+        "Metric": "HANDBALLING",
+        "%TRAIT": 15
+    },
+    {
+        "POS": "GF",
+        "Trait": "BALL USE",
+        "%RTG": 35,
+        "Metric": "KICKING",
+        "%TRAIT": 35
+    },
+    {
+        "POS": "GF",
+        "Trait": "BALL USE",
+        "%RTG": 35,
+        "Metric": "GOAL KICKING",
+        "%TRAIT": 35
+    },
+    {
+        "POS": "GF",
+        "Trait": "BALL USE",
+        "%RTG": 35,
+        "Metric": "CONNECTING",
+        "%TRAIT": 15
+    },
+    {
+        "POS": "GF",
+        "Trait": "AERIAL",
+        "%RTG": 20,
+        "Metric": "MARKING",
+        "%TRAIT": 35
+    },
+    {
+        "POS": "GF",
+        "Trait": "AERIAL",
+        "%RTG": 20,
+        "Metric": "CONTESTED",
+        "%TRAIT": 45
+    },
+    {
+        "POS": "GF",
+        "Trait": "AERIAL",
+        "%RTG": 20,
+        "Metric": "MOKS",
+        "%TRAIT": 20
+    },
+    {
+        "POS": "GF",
+        "Trait": "AERIAL",
+        "%RTG": 20,
+        "Metric": "RUCK",
+        "%TRAIT": 0
+    },
+    {
+        "POS": "GF",
+        "Trait": "DEFENCE",
+        "%RTG": 15,
+        "Metric": "PRESSURE",
+        "%TRAIT": 35
+    },
+    {
+        "POS": "GF",
+        "Trait": "DEFENCE",
+        "%RTG": 15,
+        "Metric": "TACKLING",
+        "%TRAIT": 40
+    },
+    {
+        "POS": "GF",
+        "Trait": "DEFENCE",
+        "%RTG": 15,
+        "Metric": "INTERCEPTING",
+        "%TRAIT": 10
+    },
+    {
+        "POS": "GF",
+        "Trait": "DEFENCE",
+        "%RTG": 15,
+        "Metric": "NEUTRALISE",
+        "%TRAIT": 15
+    },
+    {
+        "POS": "M",
+        "Trait": "BALL WINNING",
+        "%RTG": 35,
+        "Metric": "STOPPAGE",
+        "%TRAIT": 35
+    },
+    {
+        "POS": "M",
+        "Trait": "BALL WINNING",
+        "%RTG": 35,
+        "Metric": "CONTEST",
+        "%TRAIT": 25
+    },
+    {
+        "POS": "M",
+        "Trait": "BALL WINNING",
+        "%RTG": 35,
+        "Metric": "POWER",
+        "%TRAIT": 15
+    },
+    {
+        "POS": "M",
+        "Trait": "BALL WINNING",
+        "%RTG": 35,
+        "Metric": "RECEIVES",
+        "%TRAIT": 25
+    },
+    {
+        "POS": "M",
+        "Trait": "BALL USE",
+        "%RTG": 30,
+        "Metric": "HANDBALLING",
+        "%TRAIT": 25
+    },
+    {
+        "POS": "M",
+        "Trait": "BALL USE",
+        "%RTG": 30,
+        "Metric": "KICKING",
+        "%TRAIT": 35
+    },
+    {
+        "POS": "M",
+        "Trait": "BALL USE",
+        "%RTG": 30,
+        "Metric": "GOAL KICKING",
+        "%TRAIT": 20
+    },
+    {
+        "POS": "M",
+        "Trait": "BALL USE",
+        "%RTG": 30,
+        "Metric": "CONNECTING",
+        "%TRAIT": 20
+    },
+    {
+        "POS": "M",
+        "Trait": "AERIAL",
+        "%RTG": 15,
+        "Metric": "MARKING",
+        "%TRAIT": 35
+    },
+    {
+        "POS": "M",
+        "Trait": "AERIAL",
+        "%RTG": 15,
+        "Metric": "CONTESTED",
+        "%TRAIT": 45
+    },
+    {
+        "POS": "M",
+        "Trait": "AERIAL",
+        "%RTG": 15,
+        "Metric": "MOKS",
+        "%TRAIT": 20
+    },
+    {
+        "POS": "M",
+        "Trait": "AERIAL",
+        "%RTG": 15,
+        "Metric": "RUCK",
+        "%TRAIT": 0
+    },
+    {
+        "POS": "M",
+        "Trait": "DEFENCE",
+        "%RTG": 20,
+        "Metric": "PRESSURE",
+        "%TRAIT": 40
+    },
+    {
+        "POS": "M",
+        "Trait": "DEFENCE",
+        "%RTG": 20,
+        "Metric": "TACKLING",
+        "%TRAIT": 40
+    },
+    {
+        "POS": "M",
+        "Trait": "DEFENCE",
+        "%RTG": 20,
+        "Metric": "INTERCEPTING",
+        "%TRAIT": 10
+    },
+    {
+        "POS": "M",
+        "Trait": "DEFENCE",
+        "%RTG": 20,
+        "Metric": "NEUTRALISE",
+        "%TRAIT": 10
+    },
+    {
+        "POS": "W",
+        "Trait": "BALL WINNING",
+        "%RTG": 30,
+        "Metric": "STOPPAGE",
+        "%TRAIT": 20
+    },
+    {
+        "POS": "W",
+        "Trait": "BALL WINNING",
+        "%RTG": 30,
+        "Metric": "CONTEST",
+        "%TRAIT": 30
+    },
+    {
+        "POS": "W",
+        "Trait": "BALL WINNING",
+        "%RTG": 30,
+        "Metric": "POWER",
+        "%TRAIT": 10
+    },
+    {
+        "POS": "W",
+        "Trait": "BALL WINNING",
+        "%RTG": 30,
+        "Metric": "RECEIVES",
+        "%TRAIT": 40
+    },
+    {
+        "POS": "W",
+        "Trait": "BALL USE",
+        "%RTG": 35,
+        "Metric": "HANDBALLING",
+        "%TRAIT": 10
+    },
+    {
+        "POS": "W",
+        "Trait": "BALL USE",
+        "%RTG": 35,
+        "Metric": "KICKING",
+        "%TRAIT": 30
+    },
+    {
+        "POS": "W",
+        "Trait": "BALL USE",
+        "%RTG": 35,
+        "Metric": "GOAL KICKING",
+        "%TRAIT": 20
+    },
+    {
+        "POS": "W",
+        "Trait": "BALL USE",
+        "%RTG": 35,
+        "Metric": "CONNECTING",
+        "%TRAIT": 40
+    },
+    {
+        "POS": "W",
+        "Trait": "AERIAL",
+        "%RTG": 15,
+        "Metric": "MARKING",
+        "%TRAIT": 50
+    },
+    {
+        "POS": "W",
+        "Trait": "AERIAL",
+        "%RTG": 15,
+        "Metric": "CONTESTED",
+        "%TRAIT": 20
+    },
+    {
+        "POS": "W",
+        "Trait": "AERIAL",
+        "%RTG": 15,
+        "Metric": "MOKS",
+        "%TRAIT": 30
+    },
+    {
+        "POS": "W",
+        "Trait": "AERIAL",
+        "%RTG": 15,
+        "Metric": "RUCK",
+        "%TRAIT": 0
+    },
+    {
+        "POS": "W",
+        "Trait": "DEFENCE",
+        "%RTG": 20,
+        "Metric": "PRESSURE",
+        "%TRAIT": 20
+    },
+    {
+        "POS": "W",
+        "Trait": "DEFENCE",
+        "%RTG": 20,
+        "Metric": "TACKLING",
+        "%TRAIT": 20
+    },
+    {
+        "POS": "W",
+        "Trait": "DEFENCE",
+        "%RTG": 20,
+        "Metric": "INTERCEPTING",
+        "%TRAIT": 30
+    },
+    {
+        "POS": "W",
+        "Trait": "DEFENCE",
+        "%RTG": 20,
+        "Metric": "NEUTRALISE",
+        "%TRAIT": 30
+    },
+    {
+        "POS": "R",
+        "Trait": "BALL WINNING",
+        "%RTG": 20,
+        "Metric": "STOPPAGE",
+        "%TRAIT": 30
+    },
+    {
+        "POS": "R",
+        "Trait": "BALL WINNING",
+        "%RTG": 20,
+        "Metric": "CONTEST",
+        "%TRAIT": 25
+    },
+    {
+        "POS": "R",
+        "Trait": "BALL WINNING",
+        "%RTG": 20,
+        "Metric": "POWER",
+        "%TRAIT": 20
+    },
+    {
+        "POS": "R",
+        "Trait": "BALL WINNING",
+        "%RTG": 20,
+        "Metric": "RECEIVES",
+        "%TRAIT": 25
+    },
+    {
+        "POS": "R",
+        "Trait": "BALL USE",
+        "%RTG": 25,
+        "Metric": "HANDBALLING",
+        "%TRAIT": 25
+    },
+    {
+        "POS": "R",
+        "Trait": "BALL USE",
+        "%RTG": 25,
+        "Metric": "KICKING",
+        "%TRAIT": 25
+    },
+    {
+        "POS": "R",
+        "Trait": "BALL USE",
+        "%RTG": 25,
+        "Metric": "GOAL KICKING",
+        "%TRAIT": 25
+    },
+    {
+        "POS": "R",
+        "Trait": "BALL USE",
+        "%RTG": 25,
+        "Metric": "CONNECTING",
+        "%TRAIT": 25
+    },
+    {
+        "POS": "R",
+        "Trait": "AERIAL",
+        "%RTG": 40,
+        "Metric": "MARKING",
+        "%TRAIT": 10
+    },
+    {
+        "POS": "R",
+        "Trait": "AERIAL",
+        "%RTG": 40,
+        "Metric": "CONTESTED",
+        "%TRAIT": 25
+    },
+    {
+        "POS": "R",
+        "Trait": "AERIAL",
+        "%RTG": 40,
+        "Metric": "MOKS",
+        "%TRAIT": 25
+    },
+    {
+        "POS": "R",
+        "Trait": "AERIAL",
+        "%RTG": 40,
+        "Metric": "RUCK",
+        "%TRAIT": 40
+    },
+    {
+        "POS": "R",
+        "Trait": "DEFENCE",
+        "%RTG": 15,
+        "Metric": "PRESSURE",
+        "%TRAIT": 20
+    },
+    {
+        "POS": "R",
+        "Trait": "DEFENCE",
+        "%RTG": 15,
+        "Metric": "TACKLING",
+        "%TRAIT": 25
+    },
+    {
+        "POS": "R",
+        "Trait": "DEFENCE",
+        "%RTG": 15,
+        "Metric": "INTERCEPTING",
+        "%TRAIT": 20
+    },
+    {
+        "POS": "R",
+        "Trait": "DEFENCE",
+        "%RTG": 15,
+        "Metric": "NEUTRALISE",
+        "%TRAIT": 35
+    },
+    {
+        "POS": "GD",
+        "Trait": "BALL WINNING",
+        "%RTG": 25,
+        "Metric": "STOPPAGE",
+        "%TRAIT": 15
+    },
+    {
+        "POS": "GD",
+        "Trait": "BALL WINNING",
+        "%RTG": 25,
+        "Metric": "CONTEST",
+        "%TRAIT": 30
+    },
+    {
+        "POS": "GD",
+        "Trait": "BALL WINNING",
+        "%RTG": 25,
+        "Metric": "POWER",
+        "%TRAIT": 10
+    },
+    {
+        "POS": "GD",
+        "Trait": "BALL WINNING",
+        "%RTG": 25,
+        "Metric": "RECEIVES",
+        "%TRAIT": 45
+    },
+    {
+        "POS": "GD",
+        "Trait": "BALL USE",
+        "%RTG": 35,
+        "Metric": "HANDBALLING",
+        "%TRAIT": 35
+    },
+    {
+        "POS": "GD",
+        "Trait": "BALL USE",
+        "%RTG": 35,
+        "Metric": "KICKING",
+        "%TRAIT": 35
+    },
+    {
+        "POS": "GD",
+        "Trait": "BALL USE",
+        "%RTG": 35,
+        "Metric": "GOAL KICKING",
+        "%TRAIT": 10
+    },
+    {
+        "POS": "GD",
+        "Trait": "BALL USE",
+        "%RTG": 35,
+        "Metric": "CONNECTING",
+        "%TRAIT": 20
+    },
+    {
+        "POS": "GD",
+        "Trait": "AERIAL",
+        "%RTG": 15,
+        "Metric": "MARKING",
+        "%TRAIT": 35
+    },
+    {
+        "POS": "GD",
+        "Trait": "AERIAL",
+        "%RTG": 15,
+        "Metric": "CONTESTED",
+        "%TRAIT": 35
+    },
+    {
+        "POS": "GD",
+        "Trait": "AERIAL",
+        "%RTG": 15,
+        "Metric": "MOKS",
+        "%TRAIT": 30
+    },
+    {
+        "POS": "GD",
+        "Trait": "AERIAL",
+        "%RTG": 15,
+        "Metric": "RUCK",
+        "%TRAIT": 0
+    },
+    {
+        "POS": "GD",
+        "Trait": "DEFENCE",
+        "%RTG": 25,
+        "Metric": "PRESSURE",
+        "%TRAIT": 25
+    },
+    {
+        "POS": "GD",
+        "Trait": "DEFENCE",
+        "%RTG": 25,
+        "Metric": "TACKLING",
+        "%TRAIT": 30
+    },
+    {
+        "POS": "GD",
+        "Trait": "DEFENCE",
+        "%RTG": 25,
+        "Metric": "INTERCEPTING",
+        "%TRAIT": 25
+    },
+    {
+        "POS": "GD",
+        "Trait": "DEFENCE",
+        "%RTG": 25,
+        "Metric": "NEUTRALISE",
+        "%TRAIT": 20
+    },
+    {
+        "POS": "KD",
+        "Trait": "BALL WINNING",
+        "%RTG": 20,
+        "Metric": "STOPPAGE",
+        "%TRAIT": 20
+    },
+    {
+        "POS": "KD",
+        "Trait": "BALL WINNING",
+        "%RTG": 20,
+        "Metric": "CONTEST",
+        "%TRAIT": 35
+    },
+    {
+        "POS": "KD",
+        "Trait": "BALL WINNING",
+        "%RTG": 20,
+        "Metric": "POWER",
+        "%TRAIT": 15
+    },
+    {
+        "POS": "KD",
+        "Trait": "BALL WINNING",
+        "%RTG": 20,
+        "Metric": "RECEIVES",
+        "%TRAIT": 30
+    },
+    {
+        "POS": "KD",
+        "Trait": "BALL USE",
+        "%RTG": 15,
+        "Metric": "HANDBALLING",
+        "%TRAIT": 40
+    },
+    {
+        "POS": "KD",
+        "Trait": "BALL USE",
+        "%RTG": 15,
+        "Metric": "KICKING",
+        "%TRAIT": 40
+    },
+    {
+        "POS": "KD",
+        "Trait": "BALL USE",
+        "%RTG": 15,
+        "Metric": "GOAL KICKING",
+        "%TRAIT": 10
+    },
+    {
+        "POS": "KD",
+        "Trait": "BALL USE",
+        "%RTG": 15,
+        "Metric": "CONNECTING",
+        "%TRAIT": 10
+    },
+    {
+        "POS": "KD",
+        "Trait": "AERIAL",
+        "%RTG": 30,
+        "Metric": "MARKING",
+        "%TRAIT": 25
+    },
+    {
+        "POS": "KD",
+        "Trait": "AERIAL",
+        "%RTG": 30,
+        "Metric": "CONTESTED",
+        "%TRAIT": 40
+    },
+    {
+        "POS": "KD",
+        "Trait": "AERIAL",
+        "%RTG": 30,
+        "Metric": "MOKS",
+        "%TRAIT": 35
+    },
+    {
+        "POS": "KD",
+        "Trait": "AERIAL",
+        "%RTG": 30,
+        "Metric": "RUCK",
+        "%TRAIT": 0
+    },
+    {
+        "POS": "KD",
+        "Trait": "DEFENCE",
+        "%RTG": 35,
+        "Metric": "PRESSURE",
+        "%TRAIT": 10
+    },
+    {
+        "POS": "KD",
+        "Trait": "DEFENCE",
+        "%RTG": 35,
+        "Metric": "TACKLING",
+        "%TRAIT": 15
+    },
+    {
+        "POS": "KD",
+        "Trait": "DEFENCE",
+        "%RTG": 35,
+        "Metric": "INTERCEPTING",
+        "%TRAIT": 30
+    },
+    {
+        "POS": "KD",
+        "Trait": "DEFENCE",
+        "%RTG": 35,
+        "Metric": "NEUTRALISE",
+        "%TRAIT": 45
     }
 ]
