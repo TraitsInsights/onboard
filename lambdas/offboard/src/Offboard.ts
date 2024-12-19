@@ -23,7 +23,12 @@ export class Offboard {
       parameters: [{ name: "host", value: { stringValue: tenantName } }],
     });
 
-    if (!results || !results.records) {
+    if (
+      !results ||
+      !results.records ||
+      results.records.length === 0 ||
+      results.records[0].length === 0
+    ) {
       const slackMessage = {
         channel: "test",
         text: `⚠️ *Failed to offboard client ${tenantName}*\n\nCould not find a client that matches the url https://${tenantName}.traitsinsights.app.`,
