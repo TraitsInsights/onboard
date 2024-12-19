@@ -11,16 +11,16 @@ const rdsData = new RDSData();
 
 const dbMappings = {
   wyscout: {
-    all: 100,
-    "wyscout-womens": 32,
-    "wyscout-youth": 75,
-    "wyscout-mens-youth": 99,
+    all: 998,
+    "wyscout-womens": 997,
+    "wyscout-youth": 996,
+    "wyscout-mens-youth": 999,
   },
   champion: {
-    all: 3,
-    "wyscout-womens": 3,
-    "wyscout-youth": 3,
-    "wyscout-mens": 3,
+    all: 101,
+    "wyscout-womens": 101,
+    "wyscout-youth": 101,
+    "wyscout-mens": 101,
   },
 };
 
