@@ -14,6 +14,13 @@ export type SlackOnboardPayload = {
   user_id: string;
 };
 
+export type SlackOffboardPayload = {
+  token: string;
+  trigger_id: string;
+  user_id: string;
+  text: string;
+};
+
 export type SlackOnboardSubmitPayload = {
   payload: SlackPayload & {
     view: {
