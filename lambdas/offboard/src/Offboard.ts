@@ -46,11 +46,13 @@ export class Offboard {
 
     const tenantId = results.records[0][0].stringValue;
 
+    console.log("Tenant ID: ", tenantId);
+
     // await rdsData.executeStatement({
     //   secretArn: process.env.RDS_SECRET_ARN!,
     //   resourceArn: process.env.RDS_CLUSTER_ARN!,
     //   sql: `DELETE FROM traitsproddb.ids WHERE host = :host`,
-    //   parameters: [{ name: "host", value: { stringValue: host } }],
+    //   parameters: [{ name: "host", value: { stringValue: tenantName } }],
     // });
 
     await this.deleteS3Directory("traits-app", `deployments/${tenantId}`);
@@ -59,22 +61,34 @@ export class Offboard {
     //   Key: `settings/weights/${tenantId}.csv`,
     // });
 
-    const workflowDispatchUrl = `https://api.github.com/repos/${process.env.GITHUB_REPOSITORY}/actions/workflows/${process.env.GITHUB_ACTIONS_OFFBOARD_WORKFLOW_ID}/dispatches`;
-    await axios.post(
-      workflowDispatchUrl,
-      {
-        ref: "main",
-        inputs: {
-          clientName: tenantName,
-        },
-      },
-      {
-        headers: {
-          Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    // const workflowDispatchUrl = `https://api.github.com/repos/${process.env.GITHUB_REPOSITORY}/actions/workflows/${process.env.GITHUB_ACTIONS_OFFBOARD_WORKFLOW_ID}/dispatches`;
+    // await axios.post(
+    //   workflowDispatchUrl,
+    //   {
+    //     ref: "main",
+    //     inputs: {
+    //       clientName: tenantName,
+    //     },
+    //   },
+    //   {
+    //     headers: {
+    //       Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+    //       "Content-Type": "application/json",
+    //     },
+    //   }
+    // );
+
+    // const slackMessage = {
+    //   channel: "test",
+    //   text: `🚮 *Client Offboarded!* 🚮\n\n*Name:* ${tenantName}\n*ID:* ${tenantId}\n\nThe client has been offboarded and all data has been deleted.`,
+    // };
+
+    // await axios.post("https://slack.com/api/chat.postMessage", slackMessage, {
+    //   headers: {
+    //     Authorization: `Bearer ${process.env.SLACK_BOT_TOKEN}`,
+    //     "Content-Type": "application/json",
+    //   },
+    // });
   }
 
   async deleteS3Directory(bucket: string, prefix: string) {
@@ -82,6 +96,15 @@ export class Offboard {
       Bucket: bucket,
       Prefix: prefix,
     });
+
+    console.log(
+      "Bucket: ",
+      bucket,
+      "Prefix: ",
+      prefix,
+      "Listed Objects: ",
+      listedObjects
+    );
 
     if (
       !listedObjects ||
@@ -101,6 +124,6 @@ export class Offboard {
     //   },
     // });
 
-    if (listedObjects.IsTruncated) await this.deleteS3Directory(bucket, prefix);
+    // if (listedObjects.IsTruncated) await this.deleteS3Directory(bucket, prefix);
   }
 }
