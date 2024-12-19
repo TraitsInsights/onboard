@@ -40,7 +40,7 @@ jobs:
           aws s3 cp lambdas/init-s3/dist.zip s3://$S3_BUCKET_NAME/onboard/init-s3.zip
           aws s3 cp lambdas/interaction/dist.zip s3://$S3_BUCKET_NAME/onboard/interaction.zip
           aws s3 cp lambdas/onboard/dist.zip s3://$S3_BUCKET_NAME/onboard/onboard.zip
-          aws s3 cp lambdas/offboard/dist.zip s3://$S3_BUCKET_NAME/offboard/offboard.zip
+          aws s3 cp lambdas/offboard/dist.zip s3://$S3_BUCKET_NAME/onboard/offboard.zip
 
       - name: Trigger infrastructure apply workflow
         env:
