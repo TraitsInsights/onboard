@@ -14,16 +14,6 @@ const cloudwatch = new CloudWatchClient();
 
 export class InitRDS {
   async invoke(input: InitRDSPayload) {
-    const userPoolData = await cognito.describeUserPool({
-      UserPoolId: input.userPoolId,
-    });
-
-    if (!userPoolData || !userPoolData.UserPool?.Domain) {
-      throw new Error("No user pool found");
-    }
-
-    const domain = userPoolData.UserPool.Domain;
-
     const listUserPoolClientsData = await cognito.listUserPoolClients({
       UserPoolId: input.userPoolId,
     });
@@ -42,43 +32,18 @@ export class InitRDS {
       throw new Error("No app client ID found");
     }
 
-    const appClientSecretData = await cognito.describeUserPoolClient({
-      UserPoolId: input.userPoolId,
-      ClientId: appClientId,
-    });
-
-    if (!appClientSecretData || !appClientSecretData.UserPoolClient) {
-      throw new Error("No app client secret found");
-    }
-
-    const appClientSecret = appClientSecretData.UserPoolClient.ClientSecret;
-
-    if (!appClientSecret) {
-      throw new Error("No app client secret found");
-    }
-
     await rdsData.executeStatement({
       secretArn: process.env.RDS_SECRET_ARN!,
       resourceArn: process.env.RDS_CLUSTER_ARN!,
       sql: `
-        INSERT INTO traitsproddb.ids (tenant_id, db_id, host, cognito_url, cognito_client_id, cognito_client_secret, cognito_user_pool_id)
-        VALUES (:tenant_id, :db_id, :host, :cognito_url, :cognito_client_id, :cognito_client_secret, :cognito_user_pool_id)
+        INSERT INTO traitsproddb.ids (tenant_id, db_id, host, cognito_client_id, cognito_user_pool_id)
+        VALUES (:tenant_id, :db_id, :host, :cognito_client_id, :cognito_user_pool_id)
       `,
       parameters: [
         { name: "tenant_id", value: { stringValue: input.clientId } },
         { name: "db_id", value: { stringValue: input.clientDbId } },
         { name: "host", value: { stringValue: input.clientName } },
-        {
-          name: "cognito_url",
-          value: {
-            stringValue: `https://${domain}.auth.eu-west-1.amazoncognito.com`,
-          },
-        },
         { name: "cognito_client_id", value: { stringValue: appClientId } },
-        {
-          name: "cognito_client_secret",
-          value: { stringValue: appClientSecret },
-        },
         {
           name: "cognito_user_pool_id",
           value: { stringValue: input.userPoolId },
