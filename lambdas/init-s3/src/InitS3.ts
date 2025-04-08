@@ -152,7 +152,7 @@ export class InitS3 {
           INSERT INTO tenant_competition_category_permission (tenant_id, competition_category_id)
           SELECT :tenant_id, competition_category.id
           FROM competition_category
-          WHERE competition_category.name IN (:competition_category_names)
+          WHERE competition_category.name = ANY(string_to_array(:competition_category_names, ','))
         `,
         parameters: [
           {
