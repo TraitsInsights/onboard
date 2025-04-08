@@ -10,17 +10,15 @@ const cognito = new CognitoIdentityProvider();
 const rdsData = new RDSData();
 
 const executeStatement = (
-  schema: string,
   parameters: Omit<
     ExecuteStatementCommandInput,
-    "secretArn" | "resourceArn" | "formatRecordsAs" | "schema"
+    "secretArn" | "resourceArn" | "formatRecordsAs"
   >
 ) => {
   return rdsData.executeStatement({
     secretArn: process.env.RDS_SECRET_ARN!,
     resourceArn: process.env.RDS_CLUSTER_ARN!,
     formatRecordsAs: "JSON",
-    schema,
     ...parameters,
   });
 };
@@ -59,9 +57,9 @@ export class InitRDS {
         throw new Error("No user pool domain found");
       }
 
-      await executeStatement("public", {
+      await executeStatement({
         sql: `
-          UPDATE tenant
+          UPDATE public.tenant
           SET cognito_user_pool_id = :cognito_user_pool_id,
               cognito_app_client_id = :cognito_app_client_id,
               cognito_domain = :cognito_domain

@@ -10,17 +10,15 @@ const s3 = new S3();
 const rdsData = new RDSData();
 
 const executeStatement = (
-  schema: string,
   parameters: Omit<
     ExecuteStatementCommandInput,
-    "secretArn" | "resourceArn" | "formatRecordsAs" | "schema"
+    "secretArn" | "resourceArn" | "formatRecordsAs"
   >
 ) => {
   return rdsData.executeStatement({
     secretArn: process.env.RDS_SECRET_ARN!,
     resourceArn: process.env.RDS_CLUSTER_ARN!,
     formatRecordsAs: "JSON",
-    schema,
     ...parameters,
   });
 };
@@ -43,10 +41,10 @@ export class Offboard {
         resourceArn: process.env.RDS_CLUSTER_ARN!,
       });
 
-      const tenant = await executeStatement("public", {
+      const tenant = await executeStatement({
         transactionId,
         sql: `
-        DELETE FROM tenant
+        DELETE FROM public.tenant
         WHERE name = :tenant_name
         RETURNING id, data_provider_id, legacy_id
       `,
@@ -69,10 +67,10 @@ export class Offboard {
       const dataProviderId = response[0].data_provider_id;
       const tenantS3Id = response[0].legacy_id || tenantId;
 
-      await executeStatement(dataProviderId, {
+      await executeStatement({
         transactionId,
         sql: `
-        DELETE FROM tenant
+        DELETE FROM ${dataProviderId}.tenant
         WHERE id = :tenant_id
       `,
         parameters: [{ name: "tenant_id", value: { stringValue: tenantId } }],

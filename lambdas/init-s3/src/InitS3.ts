@@ -51,17 +51,15 @@ const minimumMinutes: {
 };
 
 const executeStatement = (
-  schema: string,
   parameters: Omit<
     ExecuteStatementCommandInput,
-    "secretArn" | "resourceArn" | "formatRecordsAs" | "schema"
+    "secretArn" | "resourceArn" | "formatRecordsAs"
   >
 ) => {
   return rdsData.executeStatement({
     secretArn: process.env.RDS_SECRET_ARN!,
     resourceArn: process.env.RDS_CLUSTER_ARN!,
     formatRecordsAs: "JSON",
-    schema,
     ...parameters,
   });
 };
@@ -95,7 +93,7 @@ export class InitS3 {
         resourceArn: process.env.RDS_CLUSTER_ARN!,
       });
 
-      const tenant = await executeStatement("public", {
+      const tenant = await executeStatement({
         transactionId,
         sql: `
           INSERT INTO public.tenant (name, data_provider_id)
@@ -120,12 +118,12 @@ export class InitS3 {
 
       const tenantId = response[0].id;
 
-      await executeStatement(dataProvider, {
+      await executeStatement({
         transactionId,
         sql: `
-          INSERT INTO tenant (id, default_team_id, framework_id, participation_minimum_minutes)
+          INSERT INTO ${dataProvider}.tenant (id, default_team_id, framework_id, participation_minimum_minutes)
           SELECT :id, team.id, framework.id, :participation_minimum_minutes
-          FROM team, framework
+          FROM ${dataProvider}.team, ${dataProvider}.framework
           WHERE team.name = :default_team_name AND framework.name = 'default'
           RETURNING id
         `,
@@ -146,12 +144,12 @@ export class InitS3 {
         ],
       });
 
-      await executeStatement(dataProvider, {
+      await executeStatement({
         transactionId,
         sql: `
-          INSERT INTO tenant_competition_category_permission (tenant_id, competition_category_id)
+          INSERT INTO ${dataProvider}.tenant_competition_category_permission (tenant_id, competition_category_id)
           SELECT :tenant_id, competition_category.id
-          FROM competition_category
+          FROM ${dataProvider}.competition_category
           WHERE competition_category.name = ANY(string_to_array(:competition_category_names, ','))
         `,
         parameters: [
@@ -181,7 +179,6 @@ export class InitS3 {
 
       await new Upload({
         client: s3,
-
         params: {
           Bucket: "traits-app",
           Key: `deployments/${tenantId}/assets/club_image.png`,
