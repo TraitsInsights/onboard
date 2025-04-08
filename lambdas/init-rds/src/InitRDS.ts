@@ -1,59 +1,116 @@
 import { CognitoIdentityProvider } from "@aws-sdk/client-cognito-identity-provider";
-import { RDSData } from "@aws-sdk/client-rds-data";
 import {
-  CloudWatchClient,
-  GetDashboardCommand,
-  PutDashboardCommand,
-} from "@aws-sdk/client-cloudwatch";
+  ExecuteStatementCommandInput,
+  RDSData,
+} from "@aws-sdk/client-rds-data";
 import axios from "axios";
 import { InitRDSPayload } from "@shared/types";
 
 const cognito = new CognitoIdentityProvider();
 const rdsData = new RDSData();
-const cloudwatch = new CloudWatchClient();
+
+const executeStatement = (
+  schema: string,
+  parameters: Omit<
+    ExecuteStatementCommandInput,
+    "secretArn" | "resourceArn" | "formatRecordsAs" | "schema"
+  >
+) => {
+  return rdsData.executeStatement({
+    secretArn: process.env.RDS_SECRET_ARN!,
+    resourceArn: process.env.RDS_CLUSTER_ARN!,
+    formatRecordsAs: "JSON",
+    schema,
+    ...parameters,
+  });
+};
 
 export class InitRDS {
   async invoke(input: InitRDSPayload) {
-    const listUserPoolClientsData = await cognito.listUserPoolClients({
-      UserPoolId: input.userPoolId,
-    });
+    try {
+      const userPool = await cognito.describeUserPool({
+        UserPoolId: input.userPoolId,
+      });
 
-    if (
-      !listUserPoolClientsData ||
-      !listUserPoolClientsData.UserPoolClients ||
-      listUserPoolClientsData.UserPoolClients.length === 0
-    ) {
-      throw new Error("No user pool clients found");
+      if (!userPool.UserPool) {
+        throw new Error("User pool not found");
+      }
+
+      const listUserPoolClientsData = await cognito.listUserPoolClients({
+        UserPoolId: input.userPoolId,
+      });
+
+      if (
+        !listUserPoolClientsData ||
+        !listUserPoolClientsData.UserPoolClients ||
+        listUserPoolClientsData.UserPoolClients.length === 0
+      ) {
+        throw new Error("No user pool clients found");
+      }
+
+      const appClientId = listUserPoolClientsData.UserPoolClients[0].ClientId;
+      const userPoolDomain = userPool.UserPool.Domain;
+
+      if (!appClientId) {
+        throw new Error("No app client ID found");
+      }
+
+      if (!userPoolDomain) {
+        throw new Error("No user pool domain found");
+      }
+
+      await executeStatement("public", {
+        sql: `
+          UPDATE tenant
+          SET cognito_user_pool_id = :cognito_user_pool_id,
+              cognito_app_client_id = :cognito_app_client_id,
+              cognito_domain = :cognito_domain
+          WHERE id = :tenant_id
+        `,
+        parameters: [
+          { name: "tenant_id", value: { stringValue: input.tenantId } },
+          {
+            name: "cognito_user_pool_id",
+            value: { stringValue: input.userPoolId },
+          },
+          {
+            name: "cognito_app_client_id",
+            value: { stringValue: appClientId },
+          },
+          {
+            name: "cognito_domain",
+            value: { stringValue: userPoolDomain },
+          },
+        ],
+      });
+
+      await this.sendSlackMessage(
+        this.getSuccessMessage(
+          input.tenantName,
+          input.tenantId,
+          input.userPoolId
+        )
+      );
+    } catch (error: any) {
+      console.error("Error during onboarding process:", error);
+      await this.sendSlackMessage(
+        this.getErrorMessage(input.tenantName, error.message)
+      );
     }
+  }
 
-    const appClientId = listUserPoolClientsData.UserPoolClients[0].ClientId;
+  getErrorMessage(tenantName: string, error: string) {
+    return `⚠️ *Failed to onboard tenant ${tenantName}* ⚠️\n\n*Error:* ${error}`;
+  }
 
-    if (!appClientId) {
-      throw new Error("No app client ID found");
-    }
+  getSuccessMessage(tenantName: string, tenantId: string, userPoolId: string) {
+    return `🎉 *Client Onboarded!* 🎉\n\n*Name:* ${tenantName}\n*ID:* ${tenantId}\n*URL:* ${tenantName}.traitsinsights.app\n\nYou can add a new user here: https://eu-west-1.console.aws.amazon.com/cognito/v2/idp/user-pools/${userPoolId}/users/create/user?region=eu-west-1`;
+  }
 
-    await rdsData.executeStatement({
-      secretArn: process.env.RDS_SECRET_ARN!,
-      resourceArn: process.env.RDS_CLUSTER_ARN!,
-      sql: `
-        INSERT INTO traitsproddb.ids (tenant_id, db_id, host, cognito_client_id, cognito_user_pool_id)
-        VALUES (:tenant_id, :db_id, :host, :cognito_client_id, :cognito_user_pool_id)
-      `,
-      parameters: [
-        { name: "tenant_id", value: { stringValue: input.clientId } },
-        { name: "db_id", value: { stringValue: input.clientDbId } },
-        { name: "host", value: { stringValue: input.clientName } },
-        { name: "cognito_client_id", value: { stringValue: appClientId } },
-        {
-          name: "cognito_user_pool_id",
-          value: { stringValue: input.userPoolId },
-        },
-      ],
-    });
-
+  async sendSlackMessage(text: string) {
     const slackMessage = {
       channel: "onboard",
-      text: `🎉 *Client Onboarded!* 🎉\n\n*Name:* ${input.clientName}\n*ID:* ${input.clientId}\n*URL:* ${input.clientName}.traitsinsights.app\n\nYou can add a new user here: https://eu-west-1.console.aws.amazon.com/cognito/v2/idp/user-pools/${input.userPoolId}/users/create/user?region=eu-west-1`,
+      text,
     };
 
     await axios.post("https://slack.com/api/chat.postMessage", slackMessage, {
@@ -62,47 +119,5 @@ export class InitRDS {
         "Content-Type": "application/json",
       },
     });
-
-    const getDashboardCommand = new GetDashboardCommand({
-      DashboardName: "production-usage",
-    });
-    const getDashboardResponse = await cloudwatch.send(getDashboardCommand);
-
-    if (getDashboardResponse.DashboardBody) {
-      const dashboardBody = JSON.parse(getDashboardResponse.DashboardBody);
-
-      const tenantVariableIndex = dashboardBody.variables.findIndex(
-        (variable: any) => variable.id === "tenant"
-      );
-
-      const tenantValues =
-        tenantVariableIndex > -1
-          ? dashboardBody.variables[tenantVariableIndex].values
-          : [];
-
-      const updatedTenantValues = [
-        { value: `client_id = ${input.clientId}`, label: input.clientName },
-        ...tenantValues,
-      ];
-
-      const updatedDashboardBody = {
-        ...dashboardBody,
-        variables: [
-          ...dashboardBody.variables.slice(0, tenantVariableIndex),
-          {
-            ...dashboardBody.variables[tenantVariableIndex],
-            values: updatedTenantValues,
-          },
-          ...dashboardBody.variables.slice(tenantVariableIndex + 1),
-        ],
-      };
-
-      const updatedDashboardCommand = new PutDashboardCommand({
-        DashboardName: "production-usage",
-        DashboardBody: JSON.stringify(updatedDashboardBody),
-      });
-
-      await cloudwatch.send(updatedDashboardCommand);
-    }
   }
 }

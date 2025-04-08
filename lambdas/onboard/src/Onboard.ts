@@ -149,40 +149,6 @@ export class Onboard {
                 text: "Default Team",
               },
             },
-            {
-              type: "input",
-              block_id: "default_competition",
-              optional: true,
-              element: {
-                type: "plain_text_input",
-                action_id: "default_competition_input",
-                placeholder: {
-                  type: "plain_text",
-                  text: "Enter default competition",
-                },
-              },
-              label: {
-                type: "plain_text",
-                text: "Default Competition",
-              },
-            },
-            {
-              type: "input",
-              block_id: "default_season",
-              optional: true,
-              element: {
-                type: "plain_text_input",
-                action_id: "default_season_input",
-                placeholder: {
-                  type: "plain_text",
-                  text: "Enter default season",
-                },
-              },
-              label: {
-                type: "plain_text",
-                text: "Default Season",
-              },
-            },
           ],
         },
       },

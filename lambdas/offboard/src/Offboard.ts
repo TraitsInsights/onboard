@@ -1,138 +1,113 @@
-import { RDSData } from "@aws-sdk/client-rds-data";
-import { S3 } from "@aws-sdk/client-s3";
 import {
-  CloudWatchClient,
-  GetDashboardCommand,
-  PutDashboardCommand,
-} from "@aws-sdk/client-cloudwatch";
+  ExecuteStatementCommandInput,
+  RDSData,
+} from "@aws-sdk/client-rds-data";
+import { S3 } from "@aws-sdk/client-s3";
 import { SlackOffboardPayload } from "@shared/types";
 import axios from "axios";
 
 const s3 = new S3();
 const rdsData = new RDSData();
-const cloudwatch = new CloudWatchClient();
+
+const executeStatement = (
+  schema: string,
+  parameters: Omit<
+    ExecuteStatementCommandInput,
+    "secretArn" | "resourceArn" | "formatRecordsAs" | "schema"
+  >
+) => {
+  return rdsData.executeStatement({
+    secretArn: process.env.RDS_SECRET_ARN!,
+    resourceArn: process.env.RDS_CLUSTER_ARN!,
+    formatRecordsAs: "JSON",
+    schema,
+    ...parameters,
+  });
+};
 
 export class Offboard {
   async invoke(input: SlackOffboardPayload) {
-    const { token } = input;
+    try {
+      const { token } = input;
 
-    if (token !== process.env.SLACK_VERIFICATION_TOKEN) {
-      throw new Error("Invalid verification token");
-    }
-
-    const tenantName = input.text;
-
-    const results = await rdsData.executeStatement({
-      secretArn: process.env.RDS_SECRET_ARN!,
-      resourceArn: process.env.RDS_CLUSTER_ARN!,
-      sql: `SELECT tenant_id, host FROM traitsproddb.ids WHERE host = :host`,
-      parameters: [{ name: "host", value: { stringValue: tenantName } }],
-    });
-
-    if (
-      !results ||
-      !results.records ||
-      results.records.length === 0 ||
-      results.records[0].length === 0
-    ) {
-      await this.sendSlackErrorMessage(tenantName);
-      return;
-    }
-
-    const tenantId = results.records[0][0].longValue;
-
-    if (!tenantId) {
-      await this.sendSlackErrorMessage(tenantName);
-      return;
-    }
-
-    await rdsData.executeStatement({
-      secretArn: process.env.RDS_SECRET_ARN!,
-      resourceArn: process.env.RDS_CLUSTER_ARN!,
-      sql: `DELETE FROM traitsproddb.ids WHERE host = :host`,
-      parameters: [{ name: "host", value: { stringValue: tenantName } }],
-    });
-
-    await this.deleteS3Directory("traits-app", `deployments/${tenantId}`);
-    await s3.deleteObject({
-      Bucket: "traits-app",
-      Key: `settings/weights/${tenantId}.csv`,
-    });
-
-    const workflowDispatchUrl = `https://api.github.com/repos/${process.env.GITHUB_REPOSITORY}/actions/workflows/${process.env.GITHUB_ACTIONS_OFFBOARD_WORKFLOW_ID}/dispatches`;
-    await axios.post(
-      workflowDispatchUrl,
-      {
-        ref: "main",
-        inputs: {
-          clientName: tenantName,
-        },
-      },
-      {
-        headers: {
-          Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
-          "Content-Type": "application/json",
-        },
+      if (token !== process.env.SLACK_VERIFICATION_TOKEN) {
+        throw new Error("Invalid verification token");
       }
-    );
 
-    const getDashboardCommand = new GetDashboardCommand({
-      DashboardName: "production-usage",
-    });
-    const getDashboardResponse = await cloudwatch.send(getDashboardCommand);
+      await this.sendSlackMessage(this.getInProgressMessage(input.text));
 
-    if (getDashboardResponse.DashboardBody) {
-      const dashboardBody = JSON.parse(getDashboardResponse.DashboardBody);
+      const tenantName = input.text;
 
-      const tenantVariableIndex = dashboardBody.variables.findIndex(
-        (variable: any) => variable.id === "tenant"
-      );
-
-      const tenantValues =
-        tenantVariableIndex > -1
-          ? dashboardBody.variables[tenantVariableIndex].values
-          : [];
-
-      const matchingTenantIndex = tenantValues.findIndex(
-        (value: any) => value.value === `client_id = ${tenantId}`
-      );
-
-      const updatedTenantValues = [
-        ...tenantValues.slice(0, matchingTenantIndex),
-        ...tenantValues.slice(matchingTenantIndex + 1),
-      ];
-
-      const updatedDashboardBody = {
-        ...dashboardBody,
-        variables: [
-          ...dashboardBody.variables.slice(0, tenantVariableIndex),
-          {
-            ...dashboardBody.variables[tenantVariableIndex],
-            values: updatedTenantValues,
-          },
-          ...dashboardBody.variables.slice(tenantVariableIndex + 1),
-        ],
-      };
-
-      const updatedDashboardCommand = new PutDashboardCommand({
-        DashboardName: "production-usage",
-        DashboardBody: JSON.stringify(updatedDashboardBody),
+      const { transactionId } = await rdsData.beginTransaction({
+        secretArn: process.env.RDS_SECRET_ARN!,
+        resourceArn: process.env.RDS_CLUSTER_ARN!,
       });
 
-      await cloudwatch.send(updatedDashboardCommand);
+      const tenant = await executeStatement("public", {
+        transactionId,
+        sql: `
+        DELETE FROM tenant
+        WHERE name = :tenant_name
+        RETURNING id, data_provider_id, legacy_id
+      `,
+        parameters: [
+          { name: "tenant_name", value: { stringValue: tenantName } },
+        ],
+      });
+
+      if (!tenant.formattedRecords) {
+        throw new Error("Failed to insert public tenant");
+      }
+
+      const response = JSON.parse(tenant.formattedRecords);
+
+      if (response.length === 0) {
+        throw new Error("Failed to insert public tenant");
+      }
+
+      const tenantId = response[0].id;
+      const dataProviderId = response[0].data_provider_id;
+      const tenantS3Id = response[0].legacy_id || tenantId;
+
+      await executeStatement(dataProviderId, {
+        transactionId,
+        sql: `
+        DELETE FROM tenant
+        WHERE id = :tenant_id
+      `,
+        parameters: [{ name: "tenant_id", value: { stringValue: tenantId } }],
+      });
+
+      await this.deleteS3Directory("traits-app", `deployments/${tenantS3Id}`);
+
+      const workflowDispatchUrl = `https://api.github.com/repos/${process.env.GITHUB_REPOSITORY}/actions/workflows/${process.env.GITHUB_ACTIONS_OFFBOARD_WORKFLOW_ID}/dispatches`;
+      await axios.post(
+        workflowDispatchUrl,
+        {
+          ref: "main",
+          inputs: {
+            clientName: tenantName,
+          },
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+            "Content-Type": "application/json",
+          },
+        }
+      );
+
+      await rdsData.commitTransaction({
+        secretArn: process.env.RDS_SECRET_ARN!,
+        resourceArn: process.env.RDS_CLUSTER_ARN!,
+        transactionId,
+      });
+
+      await this.sendSlackMessage(this.getSuccessMessage(tenantName, tenantId));
+    } catch (e) {
+      console.error(e);
+      await this.sendSlackMessage(this.getErrorMessage(input.text));
     }
-
-    const slackMessage = {
-      channel: "onboard",
-      text: `🚮 *Client Offboarded!* 🚮\n\n*Name:* ${tenantName}\n*ID:* ${tenantId}\n\nThe client has been offboarded and all data has been deleted.`,
-    };
-
-    await axios.post("https://slack.com/api/chat.postMessage", slackMessage, {
-      headers: {
-        Authorization: `Bearer ${process.env.SLACK_BOT_TOKEN}`,
-        "Content-Type": "application/json",
-      },
-    });
   }
 
   async deleteS3Directory(bucket: string, prefix: string) {
@@ -160,10 +135,22 @@ export class Offboard {
     if (listedObjects.IsTruncated) await this.deleteS3Directory(bucket, prefix);
   }
 
-  async sendSlackErrorMessage(tenantName: string) {
+  getErrorMessage(tenantName: string) {
+    return `⚠️ *Failed to offboard tenant ${tenantName}* ⚠️`;
+  }
+
+  getInProgressMessage(tenantName: string) {
+    return `🔄 *Client offboarding in Progress* 🔄\n\n*Name:* ${tenantName}\n\nThe tenant offboarding process has started. Please wait for the confirmation message.`;
+  }
+
+  getSuccessMessage(tenantName: string, tenantId: string) {
+    return `🎉 *Client offboarded!* 🎉\n\n*Name:* ${tenantName}\n*ID:* ${tenantId}\n\nThe tenant has been offboarded and all data has been deleted.`;
+  }
+
+  async sendSlackMessage(text: string) {
     const slackMessage = {
       channel: "onboard",
-      text: `⚠️ *Failed to offboard client ${tenantName}* ⚠️\n\nCould not find a client that matches the url https://${tenantName}.traitsinsights.app.`,
+      text,
     };
 
     await axios.post("https://slack.com/api/chat.postMessage", slackMessage, {

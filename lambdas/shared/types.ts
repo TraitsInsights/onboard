@@ -38,7 +38,7 @@ export type SlackOnboardSubmitPayload = {
               selected_option: {
                 value:
                   | "all"
-                  | "wyscout-mens"
+                  | "wyscout-mens-youth"
                   | "wyscout-womens"
                   | "wyscout-youth";
               };
@@ -78,9 +78,8 @@ export type SlackOnboardSubmitPayload = {
 };
 
 export type InitRDSPayload = {
-  clientName: string;
-  clientId: string;
-  clientDbId: string;
+  tenantId: string;
+  tenantName: string;
   userPoolId: string;
 };
 
