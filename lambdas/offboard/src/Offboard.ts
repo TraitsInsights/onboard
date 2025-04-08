@@ -48,7 +48,7 @@ export class Offboard {
         sql: `
         DELETE FROM tenant
         WHERE name = :tenant_name
-        RETURNING id, data_provider_id
+        RETURNING id, data_provider_id, legacy_id
       `,
         parameters: [
           { name: "tenant_name", value: { stringValue: tenantName } },
@@ -67,6 +67,7 @@ export class Offboard {
 
       const tenantId = response[0].id;
       const dataProviderId = response[0].data_provider_id;
+      const tenantS3Id = response[0].legacy_id || tenantId;
 
       await executeStatement(dataProviderId, {
         transactionId,
@@ -77,7 +78,7 @@ export class Offboard {
         parameters: [{ name: "tenant_id", value: { stringValue: tenantId } }],
       });
 
-      await this.deleteS3Directory("traits-app", `deployments/${tenantId}`);
+      await this.deleteS3Directory("traits-app", `deployments/${tenantS3Id}`);
 
       const workflowDispatchUrl = `https://api.github.com/repos/${process.env.GITHUB_REPOSITORY}/actions/workflows/${process.env.GITHUB_ACTIONS_OFFBOARD_WORKFLOW_ID}/dispatches`;
       await axios.post(
