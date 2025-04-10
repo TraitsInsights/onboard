@@ -40,6 +40,7 @@ export class Offboard {
       const { transactionId } = await rdsData.beginTransaction({
         secretArn: process.env.RDS_SECRET_ARN!,
         resourceArn: process.env.RDS_CLUSTER_ARN!,
+        database: process.env.RDS_DATABASE!,
       });
 
       const tenant = await executeStatement({
