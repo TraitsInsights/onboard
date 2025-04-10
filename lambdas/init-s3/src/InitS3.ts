@@ -188,6 +188,25 @@ export class InitS3 {
         ],
       });
 
+      await executeStatement({
+        transactionId,
+        sql: `
+          INSERT INTO ${dataProvider}.tenant_weight_profile (tenant_id, weight_profile_id)
+          SELECT :tenant_id, weight_profile.id
+          FROM ${dataProvider}.weight_profile, ${dataProvider}.framework
+          WHERE framework.name = 'default'
+          AND weight_profile.name = 'Traits Default'
+          AND weight_profile.framework_id = framework.id
+        `,
+        parameters: [
+          {
+            name: "tenant_id",
+            value: { stringValue: tenantId },
+            typeHint: "UUID",
+          },
+        ],
+      });
+
       const logoResponse = await axios.get(
         values.logo.logo_upload.files[0].url_private,
         {
