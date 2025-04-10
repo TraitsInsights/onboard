@@ -191,8 +191,8 @@ export class InitS3 {
       await executeStatement({
         transactionId,
         sql: `
-          INSERT INTO ${dataProvider}.tenant_weight_profile (tenant_id, weight_profile_id)
-          SELECT :tenant_id, weight_profile.id
+          INSERT INTO ${dataProvider}.tenant_weight_profile (tenant_id, weight_profile_id, is_default)
+          SELECT :tenant_id, weight_profile.id, true
           FROM ${dataProvider}.weight_profile, ${dataProvider}.framework
           WHERE framework.name = 'default'
           AND weight_profile.name = 'Traits Default'
