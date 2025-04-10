@@ -59,6 +59,7 @@ const executeStatement = (
   return rdsData.executeStatement({
     secretArn: process.env.RDS_SECRET_ARN!,
     resourceArn: process.env.RDS_CLUSTER_ARN!,
+    database: process.env.RDS_DATABASE!,
     formatRecordsAs: "JSON",
     ...parameters,
   });
