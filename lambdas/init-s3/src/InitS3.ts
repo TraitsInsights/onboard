@@ -34,8 +34,8 @@ const defaultTeam: {
   wyscout: {
     all: "Chelsea FC",
     "wyscout-mens-youth": "Chelsea FC",
-    "wyscout-youth": "Chelsea FC",
-    "wyscout-womens": "Womens",
+    "wyscout-youth": "Chelsea FC Under 21",
+    "wyscout-womens": "Chelsea LFC",
   },
   champion: {
     all: "AFC",
