@@ -95,6 +95,24 @@ export class InitS3 {
         database: process.env.RDS_DATABASE!,
       });
 
+      const existingTenant = await executeStatement({
+        transactionId,
+        sql: `
+          SELECT id
+          FROM public.tenant
+          WHERE name = :name
+        `,
+        parameters: [{ name: "name", value: { stringValue: name } }],
+      });
+
+      if (existingTenant.formattedRecords) {
+        const response = JSON.parse(existingTenant.formattedRecords);
+
+        if (response.length > 0) {
+          throw new Error("Tenant already exists");
+        }
+      }
+
       const tenant = await executeStatement({
         transactionId,
         sql: `
@@ -157,7 +175,8 @@ export class InitS3 {
         parameters: [
           {
             name: "tenant_id",
-            value: { stringValue: tenantId }, typeHint: "UUID"
+            value: { stringValue: tenantId },
+            typeHint: "UUID",
           },
           {
             name: "competition_category_names",
