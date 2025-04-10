@@ -67,7 +67,11 @@ export class InitRDS {
           WHERE id = :tenant_id
         `,
         parameters: [
-          { name: "tenant_id", value: { stringValue: input.tenantId } },
+          {
+            name: "tenant_id",
+            value: { stringValue: input.tenantId },
+            typeHint: "UUID",
+          },
           {
             name: "cognito_user_pool_id",
             value: { stringValue: input.userPoolId },

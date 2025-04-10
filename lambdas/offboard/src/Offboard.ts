@@ -75,7 +75,13 @@ export class Offboard {
         DELETE FROM ${dataProviderId}.tenant
         WHERE id = :tenant_id
       `,
-        parameters: [{ name: "tenant_id", value: { stringValue: tenantId } }],
+        parameters: [
+          {
+            name: "tenant_id",
+            value: { stringValue: tenantId },
+            typeHint: "UUID",
+          },
+        ],
       });
 
       await this.deleteS3Directory("traits-app", `deployments/${tenantS3Id}`);

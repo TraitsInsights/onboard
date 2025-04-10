@@ -130,7 +130,7 @@ export class InitS3 {
           RETURNING id
         `,
         parameters: [
-          { name: "id", value: { stringValue: tenantId } },
+          { name: "id", value: { stringValue: tenantId }, typeHint: "UUID" },
           {
             name: "default_team_name",
             value: {
@@ -157,7 +157,7 @@ export class InitS3 {
         parameters: [
           {
             name: "tenant_id",
-            value: { stringValue: tenantId },
+            value: { stringValue: tenantId }, typeHint: "UUID"
           },
           {
             name: "competition_category_names",
