@@ -138,6 +138,37 @@ export class InitS3 {
 
       const tenantId = response[0].id;
 
+      const teamResponse = await executeStatement({
+        transactionId,
+        sql: `
+          SELECT id
+          FROM ${dataProvider}.team
+          WHERE name = :name
+        `,
+        parameters: [
+          {
+            name: "name",
+            value: {
+              stringValue:
+                defaultTeamOverride ||
+                defaultTeam[dataProvider][competitionScope],
+            },
+          },
+        ],
+      });
+
+      if (teamResponse.formattedRecords) {
+        const response = JSON.parse(teamResponse.formattedRecords);
+
+        if (response.length === 0) {
+          throw new Error(
+            `Team ${
+              defaultTeamOverride || defaultTeam[dataProvider][competitionScope]
+            } does not exist.`
+          );
+        }
+      }
+
       await executeStatement({
         transactionId,
         sql: `
