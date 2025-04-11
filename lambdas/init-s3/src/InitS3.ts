@@ -88,7 +88,7 @@ export class InitS3 {
           : values.competition_scope.competition_scope_selection.selected_option
               .value;
       const defaultTeamOverride =
-        values.default_team.default_team_input.value?.replace(/\s+/g, "+");
+        values.default_team.default_team_input.value?.replace(/\+/g, " ");
 
       const { transactionId } = await rdsData.beginTransaction({
         secretArn: process.env.RDS_SECRET_ARN!,
